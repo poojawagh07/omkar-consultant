@@ -1,0 +1,155 @@
+.who-section {
+  width: 1456px;
+  max-width: 100%;
+  height: 460px;
+  margin: 0 auto;
+  background: #f9fafb;
+
+  position: relative;
+  left: -11px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.who-container {
+  width: 1121px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.who-title {
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 40px;
+  color: #1e3a8a;
+  margin-bottom: 12px;
+}
+
+.who-underline {
+  width: 60px;
+  height: 3px;
+  background: #1e3a8a;
+  margin: 0 auto 40px;
+  border-radius: 2px;
+}
+
+.inner-section {
+  width: 1054px;
+  max-width: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.who-text {
+  width: 1121px;
+  max-width: 100%;
+  margin: 0 auto;
+
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29.25px;
+  letter-spacing: 0px;
+  text-align: center;
+
+  color: #364153;
+}
+
+.who-text.second {
+  width: 845px;
+  max-width: 100%;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* LARGE LAPTOP */
+@media (max-width: 1400px) {
+  .who-section {
+    width: 100%;
+    left: 0;
+  }
+
+  .who-container {
+    width: 95%;
+  }
+
+  .inner-section {
+    width: 95%;
+  }
+
+  .who-text {
+    font-size: 22px;
+    line-height: 28px;
+  }
+}
+
+/* TABLET */
+@media (max-width: 992px) {
+  .who-section {
+    height: auto;
+    padding: 70px 25px;
+  }
+
+  .who-title {
+    font-size: 32px;
+  }
+
+  .inner-section {
+    gap: 20px;
+  }
+
+  .who-text {
+    font-size: 20px;
+    line-height: 27px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .who-section {
+    padding: 60px 20px;
+  }
+
+  .who-title {
+    font-size: 26px;
+    line-height: 34px;
+  }
+
+  .who-underline {
+    width: 50px;
+  }
+
+  .who-text {
+    width: 100%;
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .who-text.second {
+    width: 100%;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+  .who-section {
+    padding: 50px 16px;
+  }
+
+  .who-title {
+    font-size: 22px;
+  }
+
+  .who-text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

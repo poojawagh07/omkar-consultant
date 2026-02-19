@@ -1,0 +1,269 @@
+/* ======================================== SERVICE ======================================== */
+
+/* ================= SECTION HEADER ================= */
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 0 15px;
+}
+
+.section-header h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-header h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #0084aa;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.section-header p {
+    font-size: 16px;
+    color: #666;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ================= SECTION ================= */
+
+.services-section {
+    padding: 100px 0;
+    background-color: #f8f9fa;
+    text-align: center;
+    margin-bottom: -71px;
+    position: relative;
+}
+
+/* ================================= CARD DESIGN (UNCHANGED) ================================ */
+
+.service-card,
+.service-card1 {
+    position: relative;
+    padding: 80px 20px;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+/* clip shapes */
+.service-card {
+    clip-path: path("M0,40 Q150,-40 300,40 L300,380 Q150,300 0,380 Z");
+}
+
+.service-card1 {
+    background-color: #80808024;
+    clip-path: path("M0,40 Q150,120 300,40 L300,340 Q150,420 0,340 Z");
+}
+
+.service-card h3,
+.service-card1 h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+/* ================= COLORS ================= */
+
+.teal-card {
+    background: linear-gradient(180deg, #0084aa 0%, #00334e 100%);
+    color: #ffffff;
+}
+
+.white-card {
+    background: #80808024;
+    color: #0084aa;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+.teal-card .icon-box { background: #ffffff; }
+.white-card .icon-box { background: #0084aa; }
+.white-card .icon-box img { filter: brightness(0) invert(1); }
+
+/* ================= ICON ================= */
+
+.icon-box {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-box img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.service-card p,
+.service-card1 p {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.95;
+}
+
+/* ================= HOVER ================= */
+
+.service-card:hover,
+.service-card1:hover {
+    transform: translateY(-10px);
+}
+
+/* ================================= SLIDER CORE ================================= */
+
+.services-slider {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 40px 0;
+}
+
+.services-slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* ================= DESKTOP (4 CARDS) ================= */
+
+.services-slider .service-card,
+.services-slider .service-card1 {
+    flex: 0 0 25%;
+}
+
+/* ================= TABLET (2 CARDS) ================= */
+
+@media (max-width: 992px) {
+
+    .services-slider .service-card,
+    .services-slider .service-card1 {
+        flex: 0 0 50%;
+    }
+
+}
+
+/* ================= MOBILE (1 CARD ONLY) ================= */
+
+@media (max-width: 768px) {
+
+    .services-slider .service-card,
+    .services-slider .service-card1 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* KEEP ORIGINAL DESIGN (NO SHRINK) */
+    .service-card,
+    .service-card1 {
+        padding: 80px 20px;
+        min-height: 420px;
+    }
+
+    .icon-box {
+        width: 85px;
+        height: 85px;
+    }
+
+    .icon-box img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .service-card h3,
+    .service-card1 h3 {
+        font-size: 1.25rem;
+    }
+
+    .service-card p,
+    .service-card1 p {
+        font-size: 1rem;
+    }
+}
+
+/* ================================= ARROWS ================================= */
+
+.service-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #0B82AD;
+    color: #fff;
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+/* Desktop arrow position */
+.service-arrow.left { left: -20px; }
+.service-arrow.right { right: -20px; }
+
+/* Adjust arrow position on mobile */
+@media (max-width: 768px) {
+    .service-arrow.left { left: 5px; }
+    .service-arrow.right { right: 5px; }
+}
+/* ================= MOBILE CENTER FIX ================= */
+/* ================= MOBILE PERFECT CENTER ALIGN ================= */
+
+@media (max-width: 768px) {
+
+  /* make card a vertical center container */
+  .service-card,
+  .service-card1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  /* icon perfectly centered */
+  .icon-box {
+    margin-right: 150px;
+    width: 20%;
+    /* margin: 0 auto 18px auto !important; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* heading center */
+  .service-card h3,
+  .service-card1 h3 {
+    width: 62%;
+    text-align: center !important;
+    /* margin-left: auto; */
+    margin-right: auto;
+  }
+
+  /* paragraph center */
+  .service-card p,
+  .service-card1 p {
+    width: 60%;
+    text-align: center !important;
+    /* margin-left: auto; */
+    margin-right: auto;
+  }
+
+}
