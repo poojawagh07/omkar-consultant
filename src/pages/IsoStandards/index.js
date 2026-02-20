@@ -1,28 +1,31 @@
-import IsoImg from "../../assets/Images/iso-image.png";
-import msgIcon from "../../assets/Images/msg-icon.svg";
 import "./IsoStandards.css";
-// import heroImg from "../../assets/Images/image.png";
-// import msgIcon from "../../assets/Images/msg-icon.svg";
-
+import IsoStandardsImg from "../../assets/Images/iso-image.png";
+import msgIcon from "../../assets/Images/msg-icon.svg";
+import IsoCards from "./IsoCards/index.js";
+import Footer from "../../components/Footer/index.js";
 const IsoStandards = () => {
   return (
-    <section className="training-hero">
-      <img src={IsoImg} alt="Training" className="hero-image" />
+    <>
+      <section className="IsoStandards-hero">
+        <img src={IsoStandardsImg} alt="IsoStandards" className="hero-bg-IsoStandards" />
 
-      <div className="hero-content">
-        <h1>Training Programs</h1>
+        <div className="hero-overlay-IsoStandards"></div>
 
-        <p>
-          Professional ISO training by certified experts with practical
-          approach
-        </p>
+        <div className="hero-content-IsoStandards">
+          <h1>Training Programs</h1>
+          <p>
+          Professional ISO training by certified experts with practical approach.
+          </p>
+        </div>
 
-        <button className="hero-btn">
+        <button className="consult-btn-IsoStandards">
           <span>Get Consultation</span>
-          <img src={msgIcon} alt="icon" />
+          <img src={msgIcon} alt="arrow" />
         </button>
-      </div>
-    </section>
+      </section>
+      <IsoCards/>
+
+    </>
   );
 };
 

@@ -1,64 +1,93 @@
-.training-hero {
+.IsoStandards-hero {
   position: relative;
   width: 100%;
-  max-width: 1433px;
-  height: 607px;
-  margin: 0 auto;
+  height: 580px;
   overflow: hidden;
 }
 
-/* Hero Image */
-.hero-image {
+.hero-bg-IsoStandards {
+  position: absolute;
   width: 100%;
-  height: 100%;
+  height: 607px;
   object-fit: cover;
+  z-index: 0;
 }
 
-/* Center Content Group */
-.hero-content {
+.hero-overlay-IsoStandards {
   position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+.hero-content-IsoStandards {
+  position: absolute;
+  left: 322px;
+  top: 184px;
   width: 992px;
   height: 120px;
-  top: 322px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
   color: #ffffff;
+  text-align: center;
+  z-index: 2;
 }
 
-/* Heading */
-.hero-content h1 {
+.hero-content-IsoStandards h1 {
+  width: 992px;
+  height: 48px;
+
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   font-size: 48px;
   line-height: 48px;
+  letter-spacing: 0px;
+
+  color: #ffffff;
+  text-align: center;
   margin: 0;
 }
 
-/* Paragraph */
-.hero-content p {
+.hero-content-IsoStandards p {
+  width: 672px;
+  height: 56px;
+
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
-  margin-top: 12px;
-  margin-bottom: 24px;
+  letter-spacing: 0px;
+
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
 }
 
-/* Button */
-.hero-btn {
+.consult-btn-IsoStandards {
+  position: absolute;
+  top: 504px;
+  right: 120px;
+
+  width: 212.04px;
+  height: 48px;
+
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
 
-  width: 212px;
-  height: 48px;
   padding-left: 24px;
   padding-right: 24px;
 
-  border-radius: 50px;
+  border-radius: 9999px;
   border: none;
+
+  background: linear-gradient(90deg, #0b82ad 0%, #053547 100%);
 
   font-family: "Poppins", sans-serif;
   font-weight: 500;
@@ -66,93 +95,109 @@
   line-height: 24px;
   color: #ffffff;
 
-  background: linear-gradient(90deg, #0b82ad, #053547);
+  cursor: pointer;
 
   box-shadow:
-    0px 4px 6px rgba(0, 0, 0, 0.10),
-    0px 10px 15px rgba(0, 0, 0, 0.10);
+    0px 4px 6px -4px rgba(0, 0, 0, 0.1),
+    0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 
-  cursor: pointer;
+  z-index: 3;
 }
 
-.hero-btn img {
+.consult-btn-IsoStandards img {
   width: 20px;
   height: 20px;
 }
 
-/* ================= TABLET ================= */
+/* ================= RESPONSIVE ================= */
+
+/* large laptop */
+@media (max-width: 1400px) {
+  .hero-content-IsoStandards {
+    left: 120px;
+  }
+
+  .consult-btn-IsoStandards {
+    right: 80px;
+  }
+}
+
+/* laptop */
 @media (max-width: 1200px) {
-
-  .training-hero {
-    height: 520px;
-  }
-
-  .hero-content {
+  .hero-content-IsoStandards {
+    left: 60px;
     width: 90%;
-    height: auto;
-    top: 50%;
-    transform: translate(-50%, -50%);
   }
 
-  .hero-content h1 {
-    font-size: 38px;
-    line-height: 42px;
+  .hero-content-IsoStandards h1 {
+    font-size: 40px;
   }
 
-  .hero-content p {
+  .hero-content-IsoStandards p {
     font-size: 18px;
   }
 }
 
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
-
-  .training-hero {
-    height: 420px;
+/* tablet */
+@media (max-width: 992px) {
+  .IsoStandards-hero {
+    height: 500px;
   }
 
-  .hero-content {
-    width: 92%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+  .hero-content-IsoStandards {
+    position: relative;
+    left: auto;
+    top: auto;
+    margin: auto;
+    height: auto;
+    padding-top: 120px;
   }
 
-  .hero-content h1 {
-    font-size: 28px;
-    line-height: 34px;
-  }
-
-  .hero-content p {
-    font-size: 15px;
-    line-height: 22px;
-  }
-
-  .hero-btn {
-    width: auto;
-    height: 42px;
-    padding: 10px 18px;
-    font-size: 14px;
-  }
-
-  .hero-btn img {
-    width: 18px;
-    height: 18px;
+  .consult-btn-IsoStandards {
+    position: absolute;
+    top: auto;
+    bottom: 40px;
+    right: 50%;
+    transform: translateX(50%);
   }
 }
 
-/* ================= SMALL MOBILE ================= */
-@media (max-width: 480px) {
+/* mobile */
+@media (max-width: 768px) {
+  .IsoStandards-hero {
+    height: 420px;
+  }
 
-  .training-hero {
+  .hero-content-IsoStandards h1 {
+    font-size: 28px;
+    line-height: 34px;
+    width: auto;
+  }
+
+  .hero-content-IsoStandards p {
+    font-size: 14px;
+    line-height: 22px;
+    width: auto;
+  }
+
+  .consult-btn-IsoStandards {
+    bottom: 24px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+
+/* small mobile */
+@media (max-width: 480px) {
+  .IsoStandards-hero {
     height: 360px;
   }
 
-  .hero-content h1 {
-    font-size: 24px;
-    line-height: 30px;
+  .hero-content-IsoStandards {
+    padding: 80px 16px 0;
   }
 
-  .hero-content p {
-    font-size: 14px;
+  .consult-btn-IsoStandards {
+    bottom: 20px;
   }
 }

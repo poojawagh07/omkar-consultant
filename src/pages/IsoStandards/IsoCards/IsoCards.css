@@ -1,0 +1,189 @@
+
+.isoStandards-training-section .isoStandards-container {
+    max-width: 1239px;
+    height: 1672px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    left: 55px;
+}
+
+.isoStandards-training-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1239px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    background-color: #fff;
+    font-family: 'Outfit', sans-serif;
+}
+
+
+.isoStandards-training-card {
+    background: #ffffff;
+    height: 550.17px;
+    width: 309.33px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+
+.isoStandards-card-header {
+    background-color: #0e88ab;
+    width: 309.33px;
+    height: 176px;
+    padding: 25px 20px;
+    color: #ffffff;
+    min-height: 160px;
+}
+
+.isoStandards-top-tags {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.isoStandards-tag-pill {
+    font-size: 11px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.isoStandards-tag-pill.white {
+    background: #ffffff;
+    color: #0e88ab;
+    font-weight: 700;
+}
+
+.isoStandards-card-header h3 {
+    width: 221px;
+    height: 56px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    margin-bottom: 8px;
+    letter-spacing: 0px;
+    font-family: "Poppins", sans-serif;
+}
+
+.isoStandards-iso-sub {
+    width: 120px;
+    height: 24px;
+    font-size: 12px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    opacity: 0.8;
+    color: #DBEAFE;
+}
+
+
+.isoStandards-card-body {
+    padding: 24px 24px;
+    width: 309.33px;
+    height: 375.18px;
+    border: 1px solid rgba(0, 0, 0, 0.27);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
+.isoStandards-price-label {
+    width: 261.33px;
+    height: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #4A5565;
+    letter-spacing: 0px;
+    line-height: 20px;
+    margin-bottom: 5px;
+}
+
+.isoStandards-price {
+    width: 140px;
+    height: 64px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0px;
+    color: #0B82AD;
+}
+
+.isoStandards-description {
+    width: 237px;
+    height: 96px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    color: #4A5565;
+}
+
+
+.isoStandards-btn-enquire {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 261.33px;
+    height: 67.2px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    gap: 10px;
+    border-radius: 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #0B82AD;
+    text-decoration: none;
+}
+
+.isoStandards-btn-enquire:hover {
+    background-color: #0c7391;
+}
+
+
+@media (max-width: 1024px) {
+    .isoStandards-training-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .isoStandards-training-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .isoStandards-training-section .isoStandards-container {
+        height: auto;
+        left: 0;
+    }
+
+    .isoStandards-training-card {
+        height: auto;
+        width: 100%;
+    }
+
+    .isoStandards-card-body {
+        height: auto;
+        width: 100%;
+    }
+
+    .isoStandards-card-header {
+        width: 100%;
+    }
+}

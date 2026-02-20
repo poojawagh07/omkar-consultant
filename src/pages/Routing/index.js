@@ -9,6 +9,7 @@ import Services from "../Services";
 import Blog from "../Blog";
 import ISOStandard from "../IsoStandards";
 import Careers from "../Careers";
+import FreeConsultation from "../FreeConsultaion";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/iso" element={<ISOStandard />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/careers" element={<Careers />} />
+        <Route path="/FreeConsultation" element={<FreeConsultation />} />
 
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>

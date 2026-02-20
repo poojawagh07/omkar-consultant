@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useState } from "react";
 import searchIcon from "../../../assets/Images/search-icon.svg";
 import fileIcon from "../../../assets/Images/file-icon.svg";
 import training from "../../../assets/Images/Trainini-card-icon.svg";
@@ -6,7 +6,7 @@ import groupIcon from "../../../assets/Images/group-icon.svg";
 import "./Services.css";
 
 const ServicesSection = () => {
-  const sliderRef = useRef(null);
+  const [index, setIndex] = useState(0);
 
   const cards = [
     {
@@ -33,49 +33,16 @@ const ServicesSection = () => {
       desc: "Seamless migration to updated ISO standards",
       class: "service-card1 white-card",
     },
+    
   ];
 
-  // Triple copy for infinite illusion
-  const infiniteCards = [...cards, ...cards, ...cards];
-
-  // Slide function
-  const slide = (direction) => {
-    const slider = sliderRef.current;
-    const card = slider.children[0];
-    const gap = 15;
-    const cardWidth = card.offsetWidth + gap;
-
-    slider.scrollBy({
-      left: direction === "right" ? cardWidth : -cardWidth,
-      behavior: "smooth",
-    });
+  const next = () => {
+    setIndex((prev) => (prev + 1) % cards.length);
   };
 
-  // Infinite loop logic
-  useEffect(() => {
-    const slider = sliderRef.current;
-
-    const card = slider.children[0];
-    const gap = 15;
-    const cardWidth = card.offsetWidth + gap;
-    const singleSetWidth = cardWidth * cards.length;
-
-    // Start from middle copy
-    slider.scrollLeft = singleSetWidth;
-
-    const handleScroll = () => {
-      if (slider.scrollLeft <= 0) {
-        slider.scrollLeft = singleSetWidth;
-      }
-
-      if (slider.scrollLeft >= singleSetWidth * 2) {
-        slider.scrollLeft = singleSetWidth;
-      }
-    };
-
-    slider.addEventListener("scroll", handleScroll);
-    return () => slider.removeEventListener("scroll", handleScroll);
-  }, []);
+  const prev = () => {
+    setIndex((prev) => (prev === 0 ? cards.length - 1 : prev - 1));
+  };
 
   return (
     <section className="services-section">
@@ -87,27 +54,27 @@ const ServicesSection = () => {
         </p>
       </div>
 
-      <div className="container">
+      <div className="container" style={{ position: "relative", overflow: "hidden" }}>
+        
+        <button className="service-arrow left" onClick={prev}>‹</button>
+        <button className="service-arrow right" onClick={next}>›</button>
 
-        <button className="service-arrow left" onClick={() => slide("left")}>
-          ‹
-        </button>
-
-        <button className="service-arrow right" onClick={() => slide("right")}>
-          ›
-        </button>
-
-        <div className="services-slider" ref={sliderRef}>
-          {infiniteCards.map((card, i) => (
+        {/* TRACK */}
+        <div
+          className="services-grid"
+          
+        >
+          {[ ...cards].map((card, i) => (
             <div key={i} className={card.class}>
               <div className="icon-box">
-                <img src={card.icon} alt="" />
+                <img src={card.icon} alt={card.title} />
               </div>
               <h3>{card.title}</h3>
               <p>{card.desc}</p>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

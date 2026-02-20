@@ -5,14 +5,12 @@
     font-family: 'Outfit', sans-serif;
 }
 
-/* container scoped */
 .training-section .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* header */
 .training-section .section-header {
     text-align: center;
     margin-bottom: 40px;
@@ -30,14 +28,12 @@
     font-size: 16px;
 }
 
-/* grid */
 .training-section .training-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
 
-/* card */
 .training-section .training-card {
     background: #ffffff;
     border-radius: 12px;
@@ -46,7 +42,6 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.03);
 }
 
-/* header */
 .training-section .card-header {
     background-color: #0e88ab;
     padding: 25px 20px;

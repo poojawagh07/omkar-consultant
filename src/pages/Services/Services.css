@@ -108,7 +108,10 @@
   width: 20px;
   height: 20px;
 }
-
+.btn-hero-main a {
+  text-decoration: none;
+  color: inherit;
+}
 /* ================= RESPONSIVE ================= */
 
 /* large laptop */

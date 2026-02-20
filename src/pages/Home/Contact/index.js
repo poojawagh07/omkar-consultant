@@ -13,7 +13,6 @@ const ContactForm = () => {
 
   const [errors, setErrors] = useState({});
 
-  // handle input change
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -21,7 +20,6 @@ const ContactForm = () => {
     });
   };
 
-  // validation
   const validate = () => {
     let newErrors = {};
 
@@ -52,7 +50,6 @@ const ContactForm = () => {
     return newErrors;
   };
 
-  // submit
   const handleSubmit = (e) => {
     e.preventDefault();
 

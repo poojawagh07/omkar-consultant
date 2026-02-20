@@ -1,4 +1,5 @@
 import "./Services.css";
+import { Link } from "react-router-dom";
 import ServiceCard from "./ServicesCard";
 import ServicesImg from "../../assets/Images/Services-img.png";
 import msgIcon from "../../assets/Images/msg-icon.svg";
@@ -20,7 +21,9 @@ const Services = () => {
         </div>
 
         <button className="consult-btn">
-          <span>Get Consultation</span>
+          <Link to="/FreeConsultation">
+            <span>Get Consultation</span>
+          </Link>{" "}
           <img src={msgIcon} alt="arrow" />
         </button>
       </section>

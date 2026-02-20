@@ -148,59 +148,14 @@
     0px 14px 18px -3px rgba(0, 0, 0, 0.15);
 }
 
+.consult-btn-FreeConsultation a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
-/* ===============================
-   RESPONSIVE DESIGN
-   =============================== */
-
-/* Large laptops */
-/* @media (max-width: 1400px) {
-
-  .btn-hero-main {
-    left: 60%;
-    top: 70%;
-    transform: translate(-50%, -50%);
-  }
-
-  .hero-counters {
-    left: 55%;
-    top: 82%;
-    transform: translateX(-50%);
-  }
-} */
-
-
-/* Tablets */
-/* @media (max-width: 1024px) {
-
-  .hero-slider {
-    height: 600px;
-  }
-
-  .btn-hero-main {
-    left: 50%;
-    top: 68%;
-    transform: translate(-50%, -50%);
-  }
-
-  .hero-counters {
-    width: auto;
-    left: 50%;
-    top: 82%;
-    transform: translateX(-50%);
-    gap: 30px;
-  }
-
-  .counter .num {
-    font-size: 26px;
-  }
-
-  .counter .label {
-    font-size: 14px;
-  }
-} */
-
-/* 
 
 /* ===============================
    SHOW ALL COUNTERS ON MOBILEand btn
@@ -641,9 +596,6 @@
 }
 
 
-/* =========================//===========================================why choose ======================== */
-/* ===== WHY CHOOSE SECTION ONLY ===== */
-
 .why-choose-section {
   padding: 80px 0;
   background-color: #ffffff;
@@ -656,7 +608,6 @@
   padding: 0 20px;
 }
 
-/* Header */
 .why-choose-section .section-header {
   text-align: center;
   margin-bottom: 60px;
@@ -674,14 +625,12 @@
   color: #666;
 }
 
-/* Grid */
 .why-choose-section .features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px 30px;
 }
 
-/* Feature Item */
 .why-choose-section .feature-item {
   text-align: center;
   padding: 10px;
@@ -692,7 +641,6 @@
   transform: translateY(-6px);
 }
 
-/* Icon */
 .why-choose-section .feature-icon {
   width: 60px;
   height: 60px;
@@ -707,7 +655,6 @@
   box-shadow: 0 4px 10px rgba(0,132,170,0.2);
 }
 
-/* Title */
 .why-choose-section .feature-item h3 {
   font-size: 18px;
   color: #00334e;
@@ -715,7 +662,6 @@
   margin-bottom: 10px;
 }
 
-/* Text */
 .why-choose-section .feature-item p {
   font-size: 14px;
   color: #666;
@@ -742,5 +688,4 @@
 }
 
 
-/* =========================training================================= */
-/* ================= TRAINING SECTION ================= */
+
