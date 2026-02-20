@@ -21,7 +21,7 @@ const Services = () => {
         </div>
 
         <button className="consult-btn">
-          <Link to="/FreeConsultation">
+          <Link to="#">
             <span>Get Consultation</span>
           </Link>{" "}
           <img src={msgIcon} alt="arrow" />
