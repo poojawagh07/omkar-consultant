@@ -1,0 +1,198 @@
+/* ================= CARD SECTION ================= */
+
+.FressConsultaon_card-section .FressConsultaon_card-container {
+  max-width: 1239px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.FressConsultaon_card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  background-color: #fff;
+  font-family: 'Outfit', sans-serif;
+}
+
+.FressConsultaon_card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.FressConsultaon_card-header {
+  background-color: #0e88ab;
+  padding: 25px 20px;
+  color: #ffffff;
+  min-height: 160px;
+}
+
+.FressConsultaon_card-top-tags {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.FressConsultaon_card-tag-pill {
+  font-size: 11px;
+  background: rgba(255,255,255,0.2);
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.FressConsultaon_card-tag-pill.white {
+  background: #ffffff;
+  color: #0e88ab;
+  font-weight: 700;
+}
+
+.FressConsultaon_card-header h3 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 22px;
+  margin-bottom: 8px;
+  font-family: "Poppins", sans-serif;
+}
+
+.FressConsultaon_card-iso-sub {
+  font-size: 16px;
+  opacity: 0.8;
+  color: #DBEAFE;
+  font-family: "Poppins", sans-serif;
+}
+
+.FressConsultaon_card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.FressConsultaon_card-price-label {
+  font-size: 14px;
+  color: #4A5565;
+  font-family: "Poppins", sans-serif;
+}
+
+.FressConsultaon_card-price {
+  font-weight: 700;
+  font-size: 24px;
+  color: #0B82AD;
+  font-family: "Poppins", sans-serif;
+}
+
+.FressConsultaon_card-description {
+  font-size: 16px;
+  color: #4A5565;
+  font-family: "Poppins", sans-serif;
+}
+
+/* buttons */
+.Buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.FressConsultaon_card-btn,
+.FressConsultaon_card-btn1 {
+  height: 45px;
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  width: 150px;
+  cursor: pointer;
+}
+
+.FressConsultaon_card-btn {
+  border: 2px solid #0B82AD;
+  background: transparent;
+}
+
+.FressConsultaon_card-btn:hover {
+  background: #0B82AD;
+  color: #fff;
+}
+
+.FressConsultaon_card-btn1 {
+  background: #0B82AD;
+  color: #fff;
+  border: none;
+}
+
+.FressConsultaon_card-btn1:hover {
+  background: #fff;
+  color: #0B82AD;
+  border: 2px solid #0B82AD;
+}
+
+/* responsive */
+@media (max-width:1024px){
+  .FressConsultaon_card-grid { grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:768px){
+  .FressConsultaon_card-grid { grid-template-columns:1fr; }
+}
+
+/* ================= MODAL ================= */
+/* ===== FLEX LAYOUT FOR FORM ===== */
+.modal{
+  display: flex;
+width: 672px;
+padding-bottom: 24px;
+flex-direction: column;
+align-items: center;
+gap: 24px;
+flex-shrink: 0;
+border-radius: 14px;
+background: #FFF;
+box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+background-color: #ffffff;
+}
+
+.fc-header{
+width: 672px;
+  display: flex;
+height: 107.988px;
+padding: 0 24px;
+justify-content: space-between;
+align-items: center;
+border-radius: 14px 14px 0 0;
+background: #0B82AD;
+border-radius: 14px 14px;
+}
+
+.fc.header h2{
+  color: #FFF;
+font-family: Poppins;
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: 32px; /* 133.333% */
+
+}
+
+.fc.header p{
+  color: #DBEAFE;
+font-family: Poppins;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; /* 150% */
+}
+
+/* ===== FIGMA FORM LAYOUT ===== */
+
+.fc-body {
+  display: flex;
+  flex-direction: column;     /* Flow: Vertical */
+  width: 624px;               /* Fixed width */
+  height: 470.4px;            /* Fixed height */
+  gap: 16px;                  /* Gap between elements */
+  padding: 0 24px 24px 24px;  /* Left = 24px */
+  box-sizing: border-box;
+}

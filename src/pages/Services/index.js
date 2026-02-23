@@ -20,12 +20,10 @@ const Services = () => {
           </p>
         </div>
 
-        <button className="consult-btn">
-          <Link to="#">
-            <span>Get Consultation</span>
-          </Link>{" "}
-          <img src={msgIcon} alt="arrow" />
-        </button>
+     <button className="consult-btn">
+  <span>Get Consultation</span>
+  <img src={msgIcon} alt="arrow" />
+</button>
       </section>
       <ServiceCard />
     </>
