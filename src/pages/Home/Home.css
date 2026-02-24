@@ -1,6 +1,4 @@
-/* ===============================
-   HERO SECTION
-   =============================== */
+/* ===============================  HERO SECTION =============================== */
 
 .hero-slider {
   position: relative;
@@ -10,10 +8,8 @@
   height: 730px;
   overflow: hidden;
   background: url("../../assets/Images/Homeimg.jpg") center/cover no-repeat;
-  /* z-index: 2; */
 }
 
-/* HERO IMAGE LAYER */
 .hero-slider::before {
   content: "";
   position: absolute;
@@ -21,21 +17,15 @@
   z-index: 1;
 }
 
-/* GRADIENT OVERLAY */
 .hero-bg-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(11, 130, 173, 0.43) 0%,
-    rgba(5, 53, 71, 0) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(11, 130, 173, 0.43) 0%,
+      rgba(5, 53, 71, 0) 100%);
   z-index: 0;
 }
 
-/* ===============================
-   HERO COUNTERS
-   =============================== */
 
 .hero-counters {
   position: absolute;
@@ -56,7 +46,6 @@
   height: 60px;
 }
 
-/* NUMBER STYLE */
 .counter .num {
   font-family: Arial, sans-serif;
   font-size: 30px;
@@ -67,7 +56,6 @@
   display: inline-block;
 }
 
-/* LABEL STYLE */
 .counter .label {
   height: 24px;
   width: 125px;
@@ -82,54 +70,49 @@
 }
 
 
-
-
 .btn-hero-main {
   position: absolute;
-  width: 257.51px;
+  width: 257px;
   height: 56px;
-  top: 561px;
-  left: 1026px;
+  top: 80%;
+  left: 75%;
+  transform: translate(-50%, -50%);
   background: #0B82AD;
   color: #ffffff;
-  border: 1.67px solid #ffffff;
   border-radius: 10px;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
   cursor: pointer;
-  box-shadow:
-    0px 4px 6px -4px rgba(0, 0, 0, 0.10),
-    0px 10px 15px -3px rgba(0, 0, 0, 0.10);
-  transition: all 0.3s ease;
-  
+  z-index: 5;
+
 }
 
-/* FIX LINK STYLE */
+
+
+
 .btn-hero-main a {
   font-size: 16px;
   font-weight: 600;
-  color: #ffffff;        /* make text white */
-  text-decoration: none; /* remove underline */
+  color: #ffffff;
+  text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
 }
+
 .btn-hero-main a {
   pointer-events: none;
 }
 
 
 
-/* Arrow box */
 .btn-hero-main::after {
   /* content: "→"; */
   width: 20px;
   height: 20px;
-  /* border: 1.67px solid #ffffff; */
   border: none;
   border-radius: 4px;
   display: flex;
@@ -137,12 +120,13 @@
   justify-content: center;
   font-size: 14px;
 }
+
 .btn-hero-main {
   border: none;
 }
-/* Hover */
+
 .btn-hero-main:hover {
-  transform: translateY(-2px);
+  transform: translate(-50%, -50%) translateY(-2px);
   box-shadow:
     0px 6px 10px -4px rgba(0, 0, 0, 0.15),
     0px 14px 18px -3px rgba(0, 0, 0, 0.15);
@@ -157,23 +141,19 @@
 }
 
 
-/* ===============================
-   SHOW ALL COUNTERS ON MOBILEand btn
-   =============================== */
 
 @media (max-width: 768px) {
 
   .hero-slider {
     display: flex;
     flex-direction: column;
-    justify-content: center;   /* vertical center */
-    align-items: center;       /* horizontal center */
+    justify-content: center;
+    align-items: center;
     text-align: center;
     min-height: 100vh;
     padding: 40px 20px;
   }
 
-  /* CENTER BUTTON */
   .btn-hero-main {
     position: static;
     margin: 0 auto 25px;
@@ -185,7 +165,6 @@
     align-items: center;
   }
 
-  /* COUNTERS BELOW BUTTON (HORIZONTAL) */
   .hero-counters {
     position: static;
     width: 100%;
@@ -201,12 +180,11 @@
     text-align: center;
   }
 }
-/* =================================
-   RESPONSIVE IMAGE FIX (NO CSS CHANGE ABOVE)
-   ================================= *//* =================================
-   HERO IMAGE RESPONSIVE FIX ONLY
-   (no change in original CSS)
-   ================================= */
+
+.hero-slider {
+  position: relative;
+  z-index: 1;
+}
 
 @media (max-width: 1024px) {
   .hero-slider {
@@ -236,122 +214,6 @@
 
 
 
-/* 
-@media (max-width: 768px) {
-
-  .hero-counters {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    right: 0;
-    top: auto;
-    bottom: 20px;   /* push inside screen */
-    /* transform: none;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-  } */
-
-  /* .counter {
-    width: auto;
-    height: auto;
-    align-items: center;
-  }
-
-  .counter .num {
-    font-size: 24px;
-  }
-
-  .counter .label {
-    width: auto;
-    font-size: 13px;
-    text-align: center;
-  }
-} */ */
-
-
-/* SMALL MOBILE */
-/* @media (max-width: 480px) {
-
-  .hero-counters {
-    bottom: 15px;
-    gap: 12px;
-  }
-
-  .counter .num {
-    font-size: 22px;
-  }
-
-  .counter .label {
-    font-size: 12px;
-  }
-} */
-
-/* ===============================
-   HERO IMAGE RESPONSIVE
-   =============================== */
-
-/* Ultra wide screens */
-/* @media (min-width: 1600px) {
-  .hero-slider {
-    height: 820px;
-    background-size: cover;
-    background-position: center;
-  }
-} */
-
-/* Laptop */
-/* @media (max-width: 1400px) {
-  .hero-slider {
-    height: 680px;
-    background-size: cover;
-    background-position: center;
-  }
-} */
-
-/* Tablet */
-/* @media (max-width: 1024px) {
-  .hero-slider {
-    height: auto;
-    min-height: 600px;
-    background-size: cover;
-    background-position: center;
-  }
-} */
-
-
-
-
-/* ===============================
-   MOBILE HERO IMAGE FIX
-   =============================== */
-
-/* @media (max-width: 768px) {
-
-  .hero-slider {
-    height: auto !important;
-    min-height: 100vh;        /* full mobile screen */
-    /* background-size: cover;
-    background-position: center;
-  }
-
-} */ 
-
-/* SMALL PHONES */
-
-/* @media (max-width: 480px) {
-
-  .hero-slider {
-    min-height: 100vh;
-    background-size: cover;
-    background-position: center top;
-  }
-
-} */
-
 
 /* ===================About us============= */
 
@@ -359,7 +221,6 @@
 
 
 
-/* ABOUT SECTION CONTAINER */
 .about-us {
   width: 1341px;
   height: 689px;
@@ -396,7 +257,6 @@
   background: #ffffff;
 }
 
-/* top title */
 .about-header {
   text-align: center;
   margin-bottom: 50px;
@@ -414,7 +274,6 @@
   font-size: 18px;
 }
 
-/* main grid */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -422,7 +281,6 @@
   align-items: center;
 }
 
-/* left content */
 .about-content h3 {
   font-family: 'Outfit', sans-serif;
   font-size: 32px;
@@ -436,11 +294,10 @@
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 1.9;
-  color: rgba(0,0,0,0.65);
+  color: rgba(0, 0, 0, 0.65);
   margin-bottom: 14px;
 }
 
-/* button */
 .btn-contact {
   background: #0B82AD;
   color: #fff;
@@ -453,13 +310,14 @@
 }
 
 
- .about-image img {
+.about-image img {
   width: 625px;
   height: 488px;
   border-radius: 22px;
   object-fit: cover;
   display: block;
 }
+
 @media (max-width: 992px) {
   .about-image img {
     width: 100%;
@@ -470,6 +328,7 @@
     justify-content: center;
   }
 }
+
 .btn-knowMore {
   width: 167px;
   height: 56px;
@@ -498,7 +357,6 @@
   transition: all 0.3s ease;
 }
 
-/* hover (recommended for UI feel) */
 .btn-knowMore:hover {
   transform: translateY(-2px);
   box-shadow:
@@ -510,7 +368,6 @@
 
 
 
-/* restore normal document flow */
 .hero-slider,
 .about-us,
 .services-section {
@@ -519,7 +376,6 @@
   top: auto;
 }
 
-/* spacing between sections */
 .hero-slider {
   margin-bottom: 120px;
 }
@@ -530,7 +386,6 @@
   width: 100%;
 }
 
-/* container safety */
 .container {
   width: 100%;
   max-width: 1240px;
@@ -538,13 +393,11 @@
   padding: 0 20px;
 }
 
-/* prevent carousel overlap */
 .services-section {
   position: relative;
   z-index: 1;
 }
 
-/* responsive correction */
 @media (max-width: 1024px) {
 
   .about-us {
@@ -573,23 +426,22 @@
 }
 
 
-/* ===================================
-   RESPONSIVE OVERRIDE (NO PROPERTY CHANGE)
-   =================================== */
 
-@media (max-width: 768px){
 
-  .about-grid{
+@media (max-width: 768px) {
+
+  .about-grid {
     display: flex;
     flex-direction: column;
   }
 
-  .about-image{
-    order: -1;   /* image moves to top */
+  .about-image {
+    order: -1;
+    /* image moves to top */
     margin-bottom: 25px;
   }
 
-  .about-content{
+  .about-content {
     order: 1;
   }
 
@@ -652,7 +504,7 @@
   justify-content: center;
   margin: 0 auto 20px;
   font-size: 22px;
-  box-shadow: 0 4px 10px rgba(0,132,170,0.2);
+  box-shadow: 0 4px 10px rgba(0, 132, 170, 0.2);
 }
 
 .why-choose-section .feature-item h3 {
@@ -686,6 +538,3 @@
     font-size: 26px;
   }
 }
-
-
-

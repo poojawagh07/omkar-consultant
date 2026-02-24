@@ -1,6 +1,7 @@
 import React from "react";
 import "./Training.css";
 import { Link } from "react-router-dom";
+import Services from "../Services/index.js";
 
 const TrainingSection = () => {
   return (
@@ -51,6 +52,7 @@ const TrainingSection = () => {
               </p>
               <Link to="#" className="btn-enquire">Enquire Now</Link>
             </div>
+            
           </div>
 
           <div className="training-card">
@@ -76,11 +78,12 @@ const TrainingSection = () => {
         </div>
       </div>
 
+  
       <div className="view-all-container">
-        <a href="#" className="btn-view-all">
-          View All Training Programs
-        </a>
-      </div>
+  <Link to="/Services" className="btn-view-all">
+    View All Training Programs
+  </Link>
+</div>
 
     </section>
   );

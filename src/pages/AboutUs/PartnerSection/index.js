@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./PartnerSection.css";
+import ContactUs from "../../ContactUs/index.js";
 
 export default function PartnerSection() {
   return (
@@ -18,7 +19,7 @@ export default function PartnerSection() {
             Get Free Consultation
           </Link>
 
-          <Link to="#" className="btn-outline">
+          <Link to="/ContactUs" className="btn-outline">
             Contact Us
           </Link>
         </div>

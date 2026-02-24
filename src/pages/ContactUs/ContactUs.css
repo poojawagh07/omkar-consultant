@@ -1,0 +1,384 @@
+.contact-banner {
+    width: 100%;
+    background: #0B82AD;
+    padding: 48px 63px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-inner {
+    max-width: 1436px;
+    width: 100%;
+    text-align: center;
+}
+
+.contact-inner h2 {
+    color: #FFF;
+    font-family: Poppins, sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 48px;
+    margin-bottom: 10px;
+}
+
+.contact-inner p {
+    color: #DBEAFE;
+    font-family: Poppins, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+/* ====================2nd Section==================== */
+.iso-journey {
+    width: 100%;
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.iso-flex {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+.iso-content {
+    width: 472px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.iso-content h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 40px;
+    color: #101828;
+}
+
+.iso-text {
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    color: #4A5565;
+}
+
+.business-hours {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.clock-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+}
+
+
+
+.hours-time {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #364153;
+}
+
+.hours-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hours-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iso-image img {
+    width: 472px;
+    height: 314px;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0px 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 992px) {
+    .iso-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .iso-content {
+        width: 100%;
+    }
+
+    .iso-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .business-hours {
+        justify-content: center;
+    }
+}
+
+
+/* =========================3rd section====================== */
+.contact-cards-section {
+    width: 100%;
+    background: #f9fafb;
+    padding: 80px 0;
+}
+
+.contact-cards-container {
+    max-width: 1246px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.contact-card {
+    width: 309px;
+    height: 252px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow:
+        0px 1px 2px rgba(0, 0, 0, 0.1),
+        0px 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 32px;
+    text-align: center;
+}
+
+.icon-circle {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+    background: rgba(11, 130, 173, 0.09);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-card h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #101828;
+    margin-bottom: 16px;
+}
+
+.contact-card p {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #4A5565;
+    line-height: 24px;
+    margin: 4px 0;
+}
+
+@media (max-width: 992px) {
+    .contact-cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* ============================4rth section======================== */
+.contact-section {
+    width: 100%;
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.contact-wrapper {
+    max-width: 1240px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 607px 1fr;
+    gap: 32px;
+}
+
+
+.contact-form-card {
+
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 32px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.10);
+}
+
+.contact-title {
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 700;
+    color: #101828;
+    margin-bottom: 24px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contact-form label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #344054;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    height: 41.6px;
+    border-radius: 10px;
+    border: 0.8px solid #D1D5DC;
+    padding: 10px 14px;
+    font-size: 14px;
+    background-color: white;
+}
+
+.contact-form textarea {
+    height: 90px;
+    resize: none;
+}
+
+.send-btn {
+    margin-top: 8px;
+    height: 48px;
+    background: #0B82AD;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+.contact-right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+
+.hours-card {
+    width: 607px;
+    height: 196px;
+    background: white;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.10);
+}
+
+.hours-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.hours-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #4A5565;
+    margin-bottom: 6px;
+}
+
+
+.map-card {
+    height: 300px;
+    width: 607px;
+    background: #E5E7EB;
+    border-radius: 14px;
+}
+
+
+
+
+@media (max-width: 1200px) {
+
+    .contact-wrapper {
+        grid-template-columns: 1fr 1fr;
+        padding: 0 20px;
+    }
+
+    .hours-card,
+    .map-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form-card,
+    .hours-card,
+    .map-card {
+        width: 100%;
+    }
+
+    .map-card {
+        height: 260px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .contact-section {
+        padding: 60px 16px;
+    }
+
+    .contact-title {
+        font-size: 22px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 14px;
+    }
+
+    .hours-card {
+        height: auto;
+    }
+
+    .hours-row {
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .map-card {
+        height: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .contact-title {
+        font-size: 20px;
+    }
+
+    .send-btn {
+        height: 44px;
+        font-size: 14px;
+    }
+
+    .map-card {
+        height: 200px;
+    }
+}

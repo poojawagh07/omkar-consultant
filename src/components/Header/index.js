@@ -5,6 +5,7 @@ import logo from "../../assets/Images/logo.jpg";
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+
   return (
     <header className="main-header">
       <div className="container header-flex">
@@ -45,8 +46,10 @@ const Header = () => {
               </a>
             </li>
           </ul>
-
-          <button className="btn-contact">Contact Us</button>
+<a href="/ContactUs" className="btn-contact">
+  Contact Us
+</a>
+          
         </nav>
 
         <div

@@ -4,11 +4,13 @@ import IsoStandardsImg from "../../assets/Images/iso-image.png";
 import msgIcon from "../../assets/Images/msg-icon.svg";
 import IsoCards from "./IsoCards/index.js";
 import Footer from "../../components/Footer/index.js";
-
+import ConsultionModal from "../../components/ConsultationModal/index.js"
 const IsoStandards = () => {
 
   const [showModal, setShowModal] = useState(false);
 
+
+  
   return (
     <>
       <section className="IsoStandards-hero">
@@ -32,86 +34,18 @@ const IsoStandards = () => {
           className="consult-btn-IsoStandards"
           onClick={() => setShowModal(true)}
         >
+          
           <span>Get Consultation</span>
           <img src={msgIcon} alt="arrow" />
         </button>
       </section>
 
-      {/* CARDS (UNCHANGED) */}
-      <IsoCards />
+  <IsoCards/>
+   <ConsultionModal
+        show={showModal}
+        onClose={() => setShowModal(false)}
+      />
 
-      {/* CONSULTATION MODAL */}
-      {showModal && (
-        <div className="consult-overlay">
-          <div className="consult-modal-box">
-
-            <div className="consult-header">
-              <div>
-                <h2>Get Free Consultation</h2>
-                <p>Fill in your details and we'll get back to you shortly</p>
-              </div>
-              <button
-                className="consult-close"
-                onClick={() => setShowModal(false)}
-              >
-                ×
-              </button>
-            </div>
-
-            <div className="consult-body">
-              <form>
-                <div className="form-grid">
-                  <div className="form-group">
-                    <label>Full Name <span>*</span></label>
-                    <input type="text" placeholder="John Doe" />
-                  </div>
-
-                  <div className="form-group">
-                    <label>Company Name <span>*</span></label>
-                    <input type="text" placeholder="Your Company" />
-                  </div>
-
-                  <div className="form-group">
-                    <label>Email Address <span>*</span></label>
-                    <input type="email" placeholder="john@company.com" />
-                  </div>
-
-                  <div className="form-group">
-                    <label>Phone Number <span>*</span></label>
-                    <input type="tel" placeholder="+91 98765 43210" />
-                  </div>
-                </div>
-
-                <div className="form-group full-width">
-                  <label>Service / Training <span>*</span></label>
-                  <input type="text" />
-                </div>
-
-                <div className="form-group full-width">
-                  <label>Message</label>
-                  <textarea placeholder="Tell us about your requirements..."></textarea>
-                </div>
-
-                <div className="consult-footer">
-                  <button type="submit" className="submit-btn">
-                    Submit Enquiry
-                  </button>
-                  <button
-                    type="button"
-                    className="cancel-btn"
-                    onClick={() => setShowModal(false)}
-                  >
-                    Cancel
-                  </button>
-                </div>
-              </form>
-            </div>
-
-          </div>
-        </div>
-      )}
-
-      {/* <Footer /> */}
     </>
   );
 };

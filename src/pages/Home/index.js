@@ -2,7 +2,6 @@ import "./Home.css";
 import Contact from "./Contact/index.js";
 import Training from "./Training/index.js";
 import Footer from "../../components/Footer";
-import Homeimg from "../../assets/Images/Homeimg.jpg";
 import consultTem from "../../assets/Images/consult_team.png";
 
 import why1 from "../../assets/Images/why-choose-1.svg";
@@ -11,14 +10,20 @@ import why3 from "../../assets/Images/why-choose-icon-3.svg";
 import why4 from "../../assets/Images/why-choose-icon-4.svg";
 import why5 from "../../assets/Images/why-choose-icon-5.svg";
 import why6 from "../../assets/Images/why-choose-icon-6.svg";
+import ConsultModal from "../../components/ConsultationModal/index.js";
 
 import Services from "./Services/index.js";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import { useState } from "react";
 
 const Home = () => {
+
+   const [showModal, setShowModal] = useState(false); // modal state
+
+ 
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
@@ -76,11 +81,16 @@ const Home = () => {
 
         <div className="container hero-flex">
           <div className="hero-text-side">
-            <button className="btn-hero-main">
-              <Link to="/FreeConsultation">
-                <span>Get free Consultation</span>
-              </Link>
-            </button>
+           
+<button
+  className="btn-hero-main"
+  onClick={() => {
+    console.log("BUTTON CLICKED");
+    setShowModal(true);
+  }}
+>
+  <span>Get free Consultation</span>
+</button>
 
             <div className="hero-counters">
               <div className="counter">
@@ -252,6 +262,11 @@ const Home = () => {
       <Training />
       <Contact />
       <Footer />
+
+      <ConsultModal
+  show={showModal}
+  onClose={() => setShowModal(false)}
+/>
     </>
   );
 };

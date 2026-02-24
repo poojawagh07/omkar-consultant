@@ -80,6 +80,7 @@
 }
 
 .main-header .btn-contact {
+  text-decoration: nones;
   width: 140px;
   height: 40px;
   border-radius: 10px;

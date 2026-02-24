@@ -81,17 +81,15 @@ const FressConsultaonCard = () => {
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    setShowModal(true); // open when page loads
+    setShowModal(true); 
   }, []);
 
   return (
     <>
-      {/* ================= MODAL ================= */}
     {showModal && (
   <div className="fc-overlay">
     <div className="fc-modal">
 
-      {/* HEADER */}
       <div className="fc-header">
         <div>
           <h2>Get Free Consultation</h2>
