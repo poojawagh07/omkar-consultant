@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Header.css";
 import logo from "../../assets/Images/logo.jpg";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,40 +17,47 @@ const Header = () => {
         <nav className={`navbar ${menuOpen ? "open" : ""}`}>
           <ul className="nav-menu">
             <li>
-              <a href="/" className="nav-link active">
+              {/* <a href="/" className="nav-link active">
                 <b>Home</b>
-              </a>
+              </a> */}
+              <Link to="/" className="nav-link"><b>Home</b></Link>
             </li>
             <li>
-              <a href="/about" className="nav-link">
+              {/* <a href="/about" className="nav-link">
                 <b>About Us</b>
-              </a>
+              </a> */}
+              <Link to="/about" className="nav-link"><b>About Us</b></Link>
             </li>
             <li>
-              <a href="/services" className="nav-link">
+              {/* <a href="/services" className="nav-link">
                 <b>Services</b>
-              </a>
+              </a> */}
+              <Link to="/services" className="nav-link"><b>Services</b></Link>
             </li>
             <li>
-              <a href="/iso" className="nav-link">
+              {/* <a href="/iso" className="nav-link">
                 <b>ISO Standards</b>
-              </a>
+              </a> */}
+              <Link to="/iso" className="nav-link"><b>ISO Standards</b></Link>
             </li>
             <li>
-              <a href="/blog" className="nav-link">
+              {/* <a href="/blog" className="nav-link">
                 <b>Blog</b>
-              </a>
+              </a> */}
+              <Link to="/blog" className="nav-link"><b>Blog</b></Link>
             </li>
             <li>
-              <a href="/careers" className="nav-link">
+              {/* <a href="/careers" className="nav-link">
                 <b>Careers</b>
-              </a>
+              </a> */}
+              <Link to="/careers" className="nav-link"><b>Careers</b></Link>
             </li>
           </ul>
-<a href="/ContactUs" className="btn-contact">
-  Contact Us
-</a>
-          
+          {/* <a href="/ContactUs" className="btn-contact">
+            Contact Us
+          </a> */}
+          <Link to="/ContactUs" className="btn-contact">Contact Us</Link>
+
         </nav>
 
         <div

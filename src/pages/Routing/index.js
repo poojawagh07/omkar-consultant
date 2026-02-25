@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Header from "../../components/Header";
 
@@ -13,22 +13,23 @@ import ContactUs from "../ContactUs";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
+
       <Header />
 
       <Routes>
         <Route path="/" element={<Home />} />
-
         <Route path="/about" element={<AboutUS />} />
         <Route path="/services" element={<Services />} />
         <Route path="/iso" element={<ISOStandard />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/careers" element={<Careers />} />
-  <Route path="/ContactUs" element={<ContactUs />} />
+        <Route path="/ContactUs" element={<ContactUs />} />
 
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
-    </BrowserRouter>
+
+    </HashRouter>
   );
 }
 
