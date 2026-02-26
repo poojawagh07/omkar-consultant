@@ -9,8 +9,12 @@ import groupIcon2 from "../../../assets/Images/Service_card_Group_icon.svg";
 import DocumentIcon from "../../../assets/Images/service_card_document_icon.svg";
 import CertigicateIcon from "../../../assets/Images/service_card_certificate_icon.svg";
 import "./ServicesCard.css";
+import { useNavigate } from "react-router-dom";
+
 
 const ServiceCard = () => {
+    const navigate = useNavigate();
+
   const Service = [
     {
       icon: searchIcon,
@@ -89,9 +93,13 @@ const ServiceCard = () => {
                 <p>{card.desc}</p>
               </div>
 
-              <a href="#" className="learn-more">
-                Learn More <span>→</span>
-              </a>
+              <span
+      className="learn-more"
+      onClick={() => navigate("/service-details")}
+      style={{ cursor: "pointer" }}
+    >
+      Learn More →
+    </span>
             </div>
           ))}
         </div>
@@ -109,9 +117,13 @@ const ServiceCard = () => {
                 <p>{card.desc}</p>
               </div>
 
-              <a href="#" className="learn-more">
-                Learn More <span>→</span>
-              </a>
+             <span
+      className="learn-more"
+      onClick={() => navigate("/service-details")}
+      style={{ cursor: "pointer" }}
+    >
+      Learn More →
+    </span>
             </div>
           ))}
         </div>

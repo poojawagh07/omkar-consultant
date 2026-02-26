@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate,BrowserRouter } from "react-router-dom";
 
 import Header from "../../components/Header";
 
@@ -10,11 +10,13 @@ import Blog from "../Blog";
 import ISOStandard from "../IsoStandards";
 import Careers from "../Careers";
 import ContactUs from "../ContactUs";
+import ServiceDetails from "../ServiceDetails";
+
 
 function App() {
   return (
-    <HashRouter>
-
+    // <HashRouter>
+    <BrowserRouter>
       <Header />
 
       <Routes>
@@ -25,11 +27,12 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/ContactUs" element={<ContactUs />} />
+        <Route path="/service-details" element={<ServiceDetails />} />
 
-        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
+</BrowserRouter>
 
-    </HashRouter>
+    // {/* </HashRouter> */}
   );
 }
 
