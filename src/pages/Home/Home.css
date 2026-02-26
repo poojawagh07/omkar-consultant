@@ -348,7 +348,6 @@
   color: #FFFFFF;
   text-decoration: none;
 
-  /* Shadows from Figma */
   box-shadow:
     0px 8px 10px -6px rgba(0, 0, 0, 0.10),
     0px 20px 25px -5px rgba(0, 0, 0, 0.10);
@@ -437,7 +436,6 @@
 
   .about-image {
     order: -1;
-    /* image moves to top */
     margin-bottom: 25px;
   }
 
@@ -522,7 +520,6 @@
   margin: 0 auto;
 }
 
-/* Responsive */
 @media (max-width: 992px) {
   .why-choose-section .features-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -537,4 +534,22 @@
   .why-choose-section .section-header h2 {
     font-size: 26px;
   }
+}
+
+
+@media (max-width: 768px) {
+
+  .about-us {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    height: auto !important;
+    margin-bottom: 40px;
+  }
+
+  .training-section {
+    position: relative !important;
+    margin-top: 20px;
+  }
+
 }

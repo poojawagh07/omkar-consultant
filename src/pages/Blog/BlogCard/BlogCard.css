@@ -1,0 +1,173 @@
+
+
+.blog-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 20px 80px;
+}
+
+
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(280px, 309px));
+  justify-content: space-between;
+  column-gap: 32px;
+  row-gap: 50px;
+}
+
+
+
+.iso-card {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+
+  box-shadow:
+    0px 4px 6px rgba(0, 0, 0, 0.10),
+    0px 10px 15px rgba(0, 0, 0, 0.10);
+
+  transition: all 0.3s ease;
+}
+
+.iso-card:hover {
+  transform: translateY(-6px);
+}
+
+
+.iso-card-image {
+  width: 100%;
+  height: 224px;
+  position: relative;
+}
+
+.iso-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+
+.iso-tag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: #ffffff;
+  color: #0B82AD;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+
+.iso-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  height: 260px; /* fixed card height */
+}
+
+
+.iso-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #6A7282;
+  margin-bottom: 12px;
+}
+
+
+
+.iso-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #101828;
+  line-height: 28px;
+  margin-bottom: 6px;
+}
+
+
+
+/* Default: 3 lines */
+.iso-description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #6A7282;
+  margin-bottom: 10px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  min-height: 67px; 
+}
+
+
+.iso-description.expanded {
+  display: block;
+  -webkit-line-clamp: unset;
+
+  max-height: 110px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding-right: 6px;
+}
+
+.iso-description.expanded::-webkit-scrollbar {
+  width: 4px;
+}
+
+.iso-description.expanded::-webkit-scrollbar-thumb {
+  background: #0B82AD;
+  border-radius: 10px;
+}
+
+
+.iso-readmore {
+  margin-top: auto;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0B82AD;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.iso-readmore:hover {
+  text-decoration: underline;
+}
+
+
+
+@media (max-width: 1024px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .iso-card-body {
+    height: auto;
+  }
+
+  .iso-description.expanded {
+    max-height: 160px;
+  }
+}

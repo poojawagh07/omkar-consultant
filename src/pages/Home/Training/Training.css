@@ -81,7 +81,6 @@
     opacity: 0.8;
 }
 
-/* body */
 .training-section .card-body {
     padding: 25px 20px;
 }
@@ -143,7 +142,6 @@
     color: #fff;
 }
 
-/* responsive */
 @media (max-width: 1024px) {
     .training-section .training-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -154,4 +152,26 @@
     .training-section .training-grid {
         grid-template-columns: 1fr;
     }
+}
+
+.btn-enquire {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background-color: #0e88ab;
+  color: #ffffff;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.3s;
+  
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+}
+
+.btn-enquire:hover {
+  background-color: #0c7391;
 }
