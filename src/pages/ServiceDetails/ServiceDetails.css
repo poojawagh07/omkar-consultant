@@ -780,3 +780,107 @@ img {
   font-weight: 600;
   cursor: pointer;
 }
+
+/* ===============================4rth section========================== */
+/* SECTION */
+.iso-process-section{
+padding:80px 16px;
+background:#FFFFFF;
+}
+
+/* CONTAINER */
+.iso-process-container{
+max-width:1279px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:64px;
+}
+
+/* HEADER */
+.iso-process-header{
+text-align:center;
+}
+
+.iso-process-title{
+font-family:Arial;
+font-size:36px;
+font-weight:700;
+color:#101828;
+margin-bottom:12px;
+}
+
+.iso-process-desc{
+font-family:Arial;
+font-size:20px;
+color:#4A5565;
+max-width:630px;
+margin:auto;
+line-height:28px;
+}
+
+/* GRID */
+.iso-process-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:24px;
+}
+
+/* CARD */
+.iso-process-card{
+position:relative;
+background:#FFFFFF;
+border:1px solid #E5E7EB;
+border-radius:14px;
+padding:32px 24px;
+box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* NUMBER BADGE */
+.iso-process-number{
+position:absolute;
+top:-14px;
+left:100%;
+transform:translateX(-50%);
+width:36px;
+height:36px;
+border-radius:50%;
+background:#0B82AD;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:600;
+font-size:14px;
+}
+
+/* ICON */
+.iso-process-icon{
+width:64px;
+height:64px;
+background:#0B82AD;
+border-radius:14px;
+display:flex;
+align-items:center;
+justify-content:center;
+margin-bottom:20px;
+box-shadow:
+0 4px 6px rgba(0,0,0,0.10),
+0 10px 15px rgba(0,0,0,0.10);
+}
+
+/* TITLE */
+.iso-process-card h3{
+font-size:20px;
+font-weight:700;
+color:#101828;
+margin-bottom:8px;
+}
+
+/* TEXT */
+.iso-process-card p{
+font-size:16px;
+line-height:26px;
+color:#4A5565;
+margin:0;
+}

@@ -125,7 +125,6 @@ const IsoCard = () => {
         </div>
       </section>
 
-      {/* spacer added so footer does not overlap */}
       <div style={{ height: "200px" }} />
 
       <Footer />
