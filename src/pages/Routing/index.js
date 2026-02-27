@@ -11,7 +11,7 @@ import ISOStandard from "../IsoStandards";
 import Careers from "../Careers";
 import ContactUs from "../ContactUs";
 import ServiceDetails from "../ServiceDetails";
-
+import IsoCertification from "../Iso-Certification/index.js"
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        {/* <Route path="/" element={<Home />} /> */}
         <Route path="/about" element={<AboutUS />} />
         <Route path="/services" element={<Services />} />
         <Route path="/iso" element={<ISOStandard />} />
@@ -28,6 +29,10 @@ function App() {
         <Route path="/careers" element={<Careers />} />
         <Route path="/ContactUs" element={<ContactUs />} />
         <Route path="/service-details" element={<ServiceDetails />} />
+ <Route path="/IsoCertification" element={<IsoCertification />} />
+
+                <Route path="*" element={<Navigate to="/" replace />} />
+
 
       </Routes>
 </BrowserRouter>

@@ -1,11 +1,11 @@
-.services-hero {
+.services-hero-section {
   position: relative;
   width: 100%;
-  height: 580px; /* Figma value */
+  height: 580px;
   overflow: hidden;
 }
 
-.hero-bg {
+.services-hero-bg {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -13,14 +13,14 @@
   z-index: 0;
 }
 
-.hero-overlay {
+.services-hero-overlay {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.45);
   z-index: 1;
 }
 
-.hero-content {
+.services-hero-content {
   position: absolute;
   left: 211px;
   top: 184px;
@@ -38,43 +38,35 @@
   z-index: 2;
 }
 
-.hero-content h1 {
+.services-hero-content h1 {
   width: 311px;
   height: 48px;
-
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   font-size: 48px;
   line-height: 48px;
-  letter-spacing: 0px;
-
-  color: #ffffff;
-  text-align: center;
-  margin: 0;
+  justify-content: center;
+  /* margin: 0; */
+  margin-left: 30%;
 }
 
-.hero-content p {
+.services-hero-content p {
   width: 629px;
   height: 56px;
-
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
-  letter-spacing: 0px;
+   margin-left: 30%;
 
-  color: #ffffff;
-  text-align: center;
-  margin: 0;
 }
 
-.consult-btn {
+.services-consult-btn {
   position: absolute;
-  top: 504px;
-  right: 120px;
-text-decoration: none;
-color: #ffffff;
-  width: 212.04px;
+  top: 450px;
+  right: 140px;
+
+  width: 212px;
   height: 48px;
 
   display: flex;
@@ -82,72 +74,66 @@ color: #ffffff;
   justify-content: center;
   gap: 8px;
 
-  padding-left: 24px;
-  padding-right: 24px;
+  padding: 0 24px;
 
   border-radius: 9999px;
   border: none;
 
   background: linear-gradient(90deg, #0b82ad 0%, #053547 100%);
+  color: #ffffff;
+  text-decoration: none;
 
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 16px;
-  line-height: 24px;
-  color: #ffffff;
 
   cursor: pointer;
 
   box-shadow:
-    0px 4px 6px -4px rgba(0, 0, 0, 0.1),
-    0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    0px 4px 6px -4px rgba(0,0,0,0.1),
+    0px 10px 15px -3px rgba(0,0,0,0.1);
 
   z-index: 3;
 }
 
-.consult-btn img {
+.services-consult-btn img {
   width: 20px;
   height: 20px;
-  
 }
 
-/* ================= RESPONSIVE ================= */
+/* ===== RESPONSIVE ===== */
 
-/* large laptop */
 @media (max-width: 1400px) {
-  .hero-content {
+  .services-hero-content {
     left: 120px;
   }
 
-  .consult-btn {
+  .services-consult-btn {
     right: 80px;
-    
   }
 }
 
-/* laptop */
 @media (max-width: 1200px) {
-  .hero-content {
+  .services-hero-content {
     left: 60px;
     width: 90%;
   }
 
-  .hero-content h1 {
+  .services-hero-content h1 {
     font-size: 40px;
   }
 
-  .hero-content p {
+  .services-hero-content p {
     font-size: 18px;
   }
 }
 
-/* tablet */
 @media (max-width: 992px) {
-  .services-hero {
+  .services-hero-section {
     height: 500px;
   }
 
-  .hero-content {
+  .services-hero-content {
     position: relative;
     left: auto;
     top: auto;
@@ -156,51 +142,48 @@ color: #ffffff;
     padding-top: 120px;
   }
 
-  .consult-btn {
-    position: absolute;
-    top: auto;
+  .services-consult-btn {
     bottom: 40px;
     right: 50%;
     transform: translateX(50%);
+    top: auto;
   }
 }
 
-/* mobile */
 @media (max-width: 768px) {
-  .services-hero {
+  .services-hero-section {
     height: 420px;
   }
 
-  .hero-content h1 {
+  .services-hero-content h1 {
     font-size: 28px;
     line-height: 34px;
     width: auto;
   }
 
-  .hero-content p {
+  .services-hero-content p {
     font-size: 14px;
     line-height: 22px;
     width: auto;
   }
 
-  .consult-btn {
+  .services-consult-btn {
     bottom: 24px;
     right: 50%;
     transform: translateX(50%);
   }
 }
 
-/* small mobile */
 @media (max-width: 480px) {
-  .services-hero {
+  .services-hero-section {
     height: 360px;
   }
 
-  .hero-content {
+  .services-hero-content {
     padding: 80px 16px 0;
   }
 
-  .consult-btn {
+  .services-consult-btn {
     bottom: 20px;
   }
 }

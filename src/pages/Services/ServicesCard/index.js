@@ -71,13 +71,7 @@ const ServiceCard = () => {
 
   return (
     <section className="services-section">
-      <div className="section-header">
-        <h2>Our Services</h2>
-        <p>
-          Comprehensive ISO consulting and training solutions tailored to your
-          business needs
-        </p>
-      </div>
+      
 
       <div className="container">
         {/* ROW 1 */}

@@ -143,7 +143,7 @@ const Home = () => {
                 trusted position among consultancy providers.
               </p>
 
-              <Link to="#" className="btn-knowMore">
+              <Link to="/IsoCertification" className="btn-knowMore">
                 Know More
               </Link>
             </div>

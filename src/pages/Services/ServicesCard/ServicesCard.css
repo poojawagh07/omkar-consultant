@@ -30,11 +30,12 @@
 }
 
 .section-header p {
-  font-size: 16px;
+  font-size: 19px;
   color: #666;
   max-width: 650px;
   margin: 0 auto;
   line-height: 1.6;
+  padding:10px;
 }
 
 .services-grid {
@@ -122,14 +123,14 @@
 
 .service-card h3,
 .service-card1 h3 {
-  font-size: 20px;
+  font-size: 23px;
   font-weight: 700;
   margin-bottom: 12px;
 }
 
 .service-card p,
 .service-card1 p {
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.6;
   opacity: 0.95;
 }
@@ -139,7 +140,7 @@
   align-items: center;
   gap: 6px;
   margin-top: 15px;
-  font-size: 15px;
+  font-size: 19px;
   font-weight: 600;
   color: #047da8;
   text-decoration: none;

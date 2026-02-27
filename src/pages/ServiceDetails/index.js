@@ -48,7 +48,7 @@ const ServiceDetails = () => {
               assessment and actionable outcomes.
             </p>
 
-            <button className="consult-btn">
+            <button className="consult-btn-servises">
               Get Consultation
               <span className="btn-icon">💬</span>
             </button>

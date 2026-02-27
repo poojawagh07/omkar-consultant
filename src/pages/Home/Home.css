@@ -20,12 +20,13 @@
 .hero-bg-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg,
-      rgba(11, 130, 173, 0.43) 0%,
-      rgba(5, 53, 71, 0) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(11, 130, 173, 0.43) 0%,
+    rgba(5, 53, 71, 0) 100%
+  );
   z-index: 0;
 }
-
 
 .hero-counters {
   position: absolute;
@@ -36,6 +37,7 @@
   display: flex;
   align-items: center;
   gap: 40px;
+  margin-left: 10%;
 }
 
 .counter {
@@ -44,6 +46,7 @@
   align-items: flex-start;
   width: 111.49px;
   height: 60px;
+
 }
 
 .counter .num {
@@ -64,11 +67,10 @@
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0;
-  color: #E5E7EB;
+  color: #e5e7eb;
   margin-top: 4px;
   display: inline-block;
 }
-
 
 .btn-hero-main {
   position: absolute;
@@ -77,7 +79,7 @@
   top: 80%;
   left: 75%;
   transform: translate(-50%, -50%);
-  background: #0B82AD;
+  background: #0b82ad;
   color: #ffffff;
   border-radius: 10px;
   display: flex;
@@ -85,11 +87,7 @@
   justify-content: center;
   cursor: pointer;
   z-index: 5;
-
 }
-
-
-
 
 .btn-hero-main a {
   font-size: 16px;
@@ -106,8 +104,6 @@
 .btn-hero-main a {
   pointer-events: none;
 }
-
-
 
 .btn-hero-main::after {
   /* content: "→"; */
@@ -140,10 +136,7 @@
   gap: 8px;
 }
 
-
-
 @media (max-width: 768px) {
-
   .hero-slider {
     display: flex;
     flex-direction: column;
@@ -212,14 +205,7 @@
   }
 }
 
-
-
-
 /* ===================About us============= */
-
-
-
-
 
 .about-us {
   width: 1341px;
@@ -229,14 +215,13 @@
   left: 58px;
 }
 
-
 .about-header {
   text-align: center;
   margin-bottom: 20px;
 }
 
 .about-header h2 {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-weight: 600;
   font-size: 40px;
   color: #000;
@@ -246,11 +231,8 @@
 .about-header p {
   font-family: Arial, sans-serif;
   font-size: 20px;
-  color: #4A5565;
+  color: #4a5565;
 }
-
-
-
 
 .about-us {
   padding: 80px 0;
@@ -265,7 +247,7 @@
 .about-header h2 {
   font-size: 40px;
   font-weight: 700;
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   margin-bottom: 8px;
 }
 
@@ -282,7 +264,7 @@
 }
 
 .about-content h3 {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 32px;
   font-weight: 600;
   line-height: 1.4;
@@ -291,7 +273,7 @@
 }
 
 .about-content p {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   line-height: 1.9;
   color: rgba(0, 0, 0, 0.65);
@@ -299,7 +281,7 @@
 }
 
 .btn-contact {
-  background: #0B82AD;
+  background: #0b82ad;
   color: #fff;
   border: none;
   padding: 12px 26px;
@@ -308,7 +290,6 @@
   cursor: pointer;
   margin-top: 10px;
 }
-
 
 .about-image img {
   width: 625px;
@@ -332,7 +313,7 @@
 .btn-knowMore {
   width: 167px;
   height: 56px;
-  background: #0B82AD;
+  background: #0b82ad;
   border-radius: 16px;
 
   display: inline-flex;
@@ -345,12 +326,12 @@
   line-height: 24px;
   letter-spacing: 0px;
 
-  color: #FFFFFF;
+  color: #ffffff;
   text-decoration: none;
 
   box-shadow:
-    0px 8px 10px -6px rgba(0, 0, 0, 0.10),
-    0px 20px 25px -5px rgba(0, 0, 0, 0.10);
+    0px 8px 10px -6px rgba(0, 0, 0, 0.1),
+    0px 20px 25px -5px rgba(0, 0, 0, 0.1);
 
   cursor: pointer;
   transition: all 0.3s ease;
@@ -362,10 +343,6 @@
     0px 10px 14px -6px rgba(0, 0, 0, 0.15),
     0px 24px 28px -5px rgba(0, 0, 0, 0.15);
 }
-
-
-
-
 
 .hero-slider,
 .about-us,
@@ -398,7 +375,6 @@
 }
 
 @media (max-width: 1024px) {
-
   .about-us {
     width: 100%;
     left: auto;
@@ -414,7 +390,6 @@
 }
 
 @media (max-width: 768px) {
-
   .hero-slider {
     margin-bottom: 60px;
   }
@@ -424,11 +399,7 @@
   }
 }
 
-
-
-
 @media (max-width: 768px) {
-
   .about-grid {
     display: flex;
     flex-direction: column;
@@ -442,14 +413,12 @@
   .about-content {
     order: 1;
   }
-
 }
-
 
 .why-choose-section {
   padding: 80px 0;
   background-color: #ffffff;
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
 }
 
 .why-choose-section .container {
@@ -471,8 +440,9 @@
 }
 
 .why-choose-section .section-header p {
-  font-size: 16px;
+  font-size: 18px;
   color: #666;
+  padding-bottom: 20px;
 }
 
 .why-choose-section .features-grid {
@@ -513,7 +483,7 @@
 }
 
 .why-choose-section .feature-item p {
-  font-size: 14px;
+  font-size: 18px;
   color: #666;
   line-height: 1.6;
   max-width: 280px;
@@ -536,9 +506,7 @@
   }
 }
 
-
 @media (max-width: 768px) {
-
   .about-us {
     position: relative !important;
     top: auto !important;
@@ -551,5 +519,4 @@
     position: relative !important;
     margin-top: 20px;
   }
-
 }

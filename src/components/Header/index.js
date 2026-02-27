@@ -20,7 +20,7 @@ const Header = () => {
               {/* <a href="/" className="nav-link active">
                 <b>Home</b>
               </a> */}
-              <Link to="/" className="nav-link"><b>Home</b></Link>
+              <Link to="/" className="nav-link activenpm" ><b>Home</b></Link>
             </li>
             <li>
               {/* <a href="/about" className="nav-link">
