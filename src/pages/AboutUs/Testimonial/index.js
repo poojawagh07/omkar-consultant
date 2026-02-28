@@ -17,23 +17,24 @@ const testimonialsData = [
     name: "John Doe",
     role: "Quality Manager, ABC Corp",
   },
+  
 ];
 
 export default function Testimonials() {
-  const [testimonials, setTestimonials] = useState(testimonialsData);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const visibleCards = 3;
 
   const nextSlide = () => {
-    const updated = [...testimonials];
-    const first = updated.shift();
-    updated.push(first);
-    setTestimonials(updated);
+    if (currentIndex < testimonialsData.length - visibleCards) {
+      setCurrentIndex(currentIndex + 1);
+    }
   };
 
   const prevSlide = () => {
-    const updated = [...testimonials];
-    const last = updated.pop();
-    updated.unshift(last);
-    setTestimonials(updated);
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
   };
 
   return (
@@ -49,21 +50,30 @@ export default function Testimonials() {
             ‹
           </button>
 
-          <div className="testimonial-grid">
-            {testimonials.map((item, index) => (
-              <div className="testimonial-card" key={index}>
-                <div className="stars">★★★★★</div>
-                <p className="testimonial-text">{item.text}</p>
+          <div className="testimonial-slider">
+            <div
+              className="testimonial-grid"
+              style={{
+                transform: `translateX(-${currentIndex * (100 / visibleCards)}%)`,
+              }}
+            >
+              {testimonialsData.map((item, index) => (
+                <div className="testimonial-card" key={index}>
+                  <div className="stars">★★★★★</div>
 
-                <div className="testimonial-user">
-                  <div className="avatar">J</div>
-                  <div>
-                    <h4>{item.name}</h4>
-                    <span>{item.role}</span>
+                  <p className="testimonial-text">{item.text}</p>
+
+                  <div className="testimonial-user">
+                    <div className="avatar">{item.name.charAt(0)}</div>
+
+                    <div>
+                      <h4>{item.name}</h4>
+                      <span>{item.role}</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
           <button className="arrow right" onClick={nextSlide}>

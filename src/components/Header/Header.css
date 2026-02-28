@@ -3,7 +3,7 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  padding: 12px 0;
+  padding: 12px;
 }
 
 .main-header .header-flex {
@@ -17,15 +17,13 @@
   height: 70px;
 }
 
-
 .main-header .logo img {
   width: 100px;
-  height: 100px;
+  height: 90px;
   object-fit: contain;
   position: relative;
   top: -10px;
 }
-
 
 .main-header .navbar {
   display: flex;
@@ -41,13 +39,13 @@
 
 .main-header .nav-link {
   text-decoration: none;
-  color: #0C0C0D;
+  color: #0c0c0d;
   font-family: "Roboto", sans-serif;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 20px;
   line-height: 24px;
   position: relative;
-  padding: 6px 0;
+  padding: 15px 0px 0px 0px;
   transition: 0.3s ease;
 }
 
@@ -58,12 +56,12 @@
   bottom: -8px;
   width: 0;
   height: 3px;
-  background: #0B82AD;
+  background: #0b82ad;
   transition: width 0.3s ease;
 }
 
 .main-header .nav-link:hover {
-  color: #0B82AD;
+  color: #0b82ad;
 }
 
 .main-header .nav-link:hover::after {
@@ -71,7 +69,7 @@
 }
 
 .main-header .nav-link.active {
-  color: #0B82AD;
+  color: #0b82ad;
   font-weight: 600;
 }
 
@@ -79,13 +77,12 @@
   width: 100%;
 }
 
-
 .main-header .btn-contact {
   text-decoration: none;
   width: 140px;
   height: 40px;
   border-radius: 10px;
-  background: linear-gradient(90deg, #0B82AD, #053547);
+  background: linear-gradient(90deg, #0b82ad, #053547);
   color: #ffffff;
   font-family: Arial, sans-serif;
   font-weight: 700;
@@ -101,7 +98,6 @@
   opacity: 0.9;
 }
 
-
 .main-header .hamburger {
   display: none;
   flex-direction: column;
@@ -115,9 +111,7 @@
   background: #053547;
 }
 
-
 @media (max-width: 992px) {
-
   .main-header .header-flex {
     height: 80px;
   }

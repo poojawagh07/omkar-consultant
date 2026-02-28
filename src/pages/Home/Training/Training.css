@@ -1,177 +1,241 @@
-
-.training-section {
-    padding: 60px 0;
-    background-color: #fff;
-    font-family: 'Outfit', sans-serif;
+.training-section{
+    padding:60px 0;
+    background-color:#fff;
+    font-family:'Outfit',sans-serif;
 }
 
-.training-section .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
+.training-section .container{
+    width:100%;
+    max-width:1100px;
+    margin:0 auto;
+    padding:0 20px;
 }
 
-.training-section .section-header {
-    text-align: center;
-    margin-bottom: 40px;
+/* ================= HEADER ================= */
+
+.training-section .section-header{
+    text-align:center;
+    margin-bottom:40px;
 }
 
-.training-section .section-header h2 {
-    font-size: 36px;
-    color: #1a202c;
-    font-weight: 700;
-    margin-bottom: 10px;
+.training-section .section-header h2{
+   font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  color: #000;
+  margin-bottom: 8px;
+
 }
 
-.training-section .section-header p {
-    color: #718096;
-    font-size: 16px;
+.training-section .section-header p{
+    color:#718096;
+    font-size:16px;
 }
 
-.training-section .training-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+/* ================= GRID ================= */
+
+.training-section .training-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
 }
 
-.training-section .training-card {
-    background: #ffffff;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+/* ================= CARD ================= */
+
+.training-section .training-card{
+    background:#ffffff;
+    border-radius:12px;
+    overflow:hidden;
+    border:1px solid #e2e8f0;
+    box-shadow:0 4px 12px rgba(0,0,0,0.03);
+    display:flex;
+    flex-direction:column;
 }
 
-.training-section .card-header {
-    background-color: #0e88ab;
-    padding: 25px 20px;
-    color: #ffffff;
-    min-height: 160px;
+/* ================= CARD HEADER ================= */
+
+.training-section .card-header{
+    background-color:#0e88ab;
+    padding:25px 20px;
+    color:#ffffff;
+    min-height:160px;
 }
 
-.training-section .top-tags {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+.training-section .top-tags{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:20px;
 }
 
-.training-section .tag-pill {
-    font-size: 11px;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 4px 14px;
-    border-radius: 20px;
-    font-weight: 500;
+.training-section .tag-pill{
+    font-size:11px;
+    background:rgba(255,255,255,0.2);
+    padding:4px 14px;
+    border-radius:20px;
+    font-weight:500;
 }
 
-.training-section .tag-pill.white {
-    background: #ffffff;
-    color: #0e88ab;
-    font-weight: 700;
+.training-section .tag-pill.white{
+    background:#ffffff;
+    color:#0e88ab;
+    font-weight:700;
 }
 
-.training-section .card-header h3 {
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 1.4;
-    margin-bottom: 8px;
+.training-section .card-header h3{
+    font-size:18px;
+    font-weight:600;
+    line-height:1.4;
+    margin-bottom:8px;
 }
 
-.training-section .iso-sub {
-    font-size: 12px;
-    opacity: 0.8;
+.training-section .iso-sub{
+    font-size:12px;
+    opacity:0.8;
 }
 
-.training-section .card-body {
-    padding: 25px 20px;
+/* ================= CARD BODY ================= */
+
+.training-section .card-body{
+    padding:25px 20px;
+    flex-grow:1;
 }
 
-.training-section .price-label {
-    font-size: 13px;
-    color: #718096;
-    margin-bottom: 5px;
+.training-section .price-label{
+    font-size:13px;
+    color:#718096;
+    margin-bottom:5px;
 }
 
-.training-section .price {
-    font-size: 24px;
-    color: #0e88ab;
-    font-weight: 700;
-    margin-bottom: 15px;
+.training-section .price{
+    font-size:24px;
+    color:#0e88ab;
+    font-weight:700;
+    margin-bottom:15px;
 }
 
-.training-section .description {
-    font-size: 14px;
-    color: #4a5568;
-    line-height: 1.5;
-    margin-bottom: 25px;
-    min-height: 80px;
+.training-section .description{
+    font-size:14px;
+    color:#4a5568;
+    line-height:1.5;
+    margin-bottom:25px;
+    min-height:80px;
 }
 
-.training-section .btn-enquire {
-    display: block;
-    text-align: center;
-    background-color: #0e88ab;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 12px;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: 0.3s;
+/* ================= BUTTON ================= */
+
+.btn-enquire{
+  display:block;
+  width:100%;
+  text-align:center;
+  background-color:#0e88ab;
+  color:#ffffff;
+  padding:12px;
+  border-radius:8px;
+  font-weight:600;
+  transition:0.3s;
+  border:none;
+  outline:none;
+  cursor:pointer;
+  font-family:'Outfit',sans-serif;
+  font-size:14px;
 }
 
-.training-section .btn-enquire:hover {
-    background-color: #0c7391;
-}
-.view-all-container {
-    text-align: center;
-    margin-top: 50px;
+.btn-enquire:hover{
+  background-color:#0c7391;
 }
 
-.btn-view-all {
-    display: inline-block;
-    padding: 10px 30px;
-    border: 1.5px solid #0e88ab;
-    color: #1a202c;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 14px;
+/* ================= VIEW ALL ================= */
+
+.view-all-container{
+    text-align:center;
+    margin-top:50px;
 }
 
-.btn-view-all:hover {
-    background: #0e88ab;
-    color: #fff;
+.btn-view-all{
+    display:inline-block;
+    padding:10px 30px;
+    border:1.5px solid #0e88ab;
+    color:#1a202c;
+    text-decoration:none;
+    border-radius:6px;
+    font-weight:600;
+    font-size:14px;
 }
 
-@media (max-width: 1024px) {
-    .training-section .training-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.btn-view-all:hover{
+    background:#0e88ab;
+    color:#fff;
 }
 
-@media (max-width: 768px) {
-    .training-section .training-grid {
-        grid-template-columns: 1fr;
-    }
+/* ================= LARGE TABLET ================= */
+
+@media (max-width:1024px){
+
+.training-section{
+    padding:50px 0;
 }
 
-.btn-enquire {
-  display: block;
-  width: 100%;
-  text-align: center;
-  background-color: #0e88ab;
-  color: #ffffff;
-  padding: 12px;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: 0.3s;
-  
-  border: none;
-  outline: none;
-  cursor: pointer;
-  font-family: 'Outfit', sans-serif;
-  font-size: 14px;
+.training-section .training-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
 }
 
-.btn-enquire:hover {
-  background-color: #0c7391;
+.training-section .section-header h2{
+    font-size:32px;
+}
+
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width:768px){
+
+.training-section{
+    padding:40px 0;
+}
+
+.training-section .training-grid{
+    grid-template-columns:1fr;
+    gap:20px;
+}
+
+.training-section .section-header h2{
+    font-size:28px;
+}
+
+.training-section .section-header p{
+    font-size:15px;
+}
+
+.training-section .card-header{
+    min-height:auto;
+}
+
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width:480px){
+
+.training-section{
+    padding:35px 0;
+}
+
+.training-section .section-header h2{
+    font-size:24px;
+}
+
+.training-section .price{
+    font-size:22px;
+}
+
+.training-section .description{
+    font-size:13px;
+}
+
+.btn-view-all{
+    padding:8px 22px;
+    font-size:13px;
+}
+
 }

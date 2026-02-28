@@ -22,7 +22,7 @@
 
 .hero-content-IsoStandards {
   position: absolute;
-  left: 322px;
+  left: 370px;
   top: 184px;
   width: 992px;
   height: 120px;
@@ -109,9 +109,6 @@
   height: 20px;
 }
 
-/* ================= RESPONSIVE ================= */
-
-/* large laptop */
 @media (max-width: 1400px) {
   .hero-content-IsoStandards {
     left: 120px;
@@ -122,7 +119,6 @@
   }
 }
 
-/* laptop */
 @media (max-width: 1200px) {
   .hero-content-IsoStandards {
     left: 60px;
@@ -138,7 +134,6 @@
   }
 }
 
-/* tablet */
 @media (max-width: 992px) {
   .IsoStandards-hero {
     height: 500px;
@@ -162,7 +157,6 @@
   }
 }
 
-/* mobile */
 @media (max-width: 768px) {
   .IsoStandards-hero {
     height: 420px;
@@ -187,7 +181,6 @@
   }
 }
 
-/* small mobile */
 @media (max-width: 480px) {
   .IsoStandards-hero {
     height: 360px;
@@ -202,8 +195,6 @@
   }
 }
 
-/* ===== MODAL FIX ===== */
-
 .consult-overlay {
   position: fixed;
   top: 0;
@@ -217,13 +208,6 @@
   z-index: 999999;
 }
 
-/* prevent hero overlay blocking clicks */
 .hero-overlay-IsoStandards {
   pointer-events: none;
 }
-
-
-
-/* ============================= */
-/* ===== CONSULT MODAL UI ===== */
-/* ============================= */

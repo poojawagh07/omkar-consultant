@@ -97,15 +97,7 @@
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
 }
 
-.icon-box {
-  width: 85px;
-  height: 85px;
-  border-radius: 50%;
-  margin-bottom: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 
 .teal-card .icon-box {
   background: #ffffff;
@@ -113,13 +105,10 @@
 
 .white-card .icon-box {
   background: #0084aa;
+  margin-top: 10px;
 }
 
-.icon-box img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-}
+
 
 .service-card h3,
 .service-card1 h3 {

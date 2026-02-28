@@ -12,6 +12,7 @@
   display: inline-block;
 }
 
+
 .section-header h2::after {
   content: "";
   display: block;
@@ -48,6 +49,7 @@
   align-items: center;
   justify-content: center;
   transition: transform 0.3s ease;
+
 }
 
 .service-card h3,
@@ -107,10 +109,13 @@
   height: 40px;
   object-fit: contain;
 }
-
+.card.class{
+  height: 300px;
+  width: 100%;
+}
 .services-grid {
   margin-top: 0;
-  padding-top: 0;
+  padding-top: 0px;
 }
 
 .service-arrow {
