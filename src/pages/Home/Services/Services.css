@@ -1,17 +1,18 @@
+/* HEADER */
+
 .section-header {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
   padding: 0 15px;
 }
 
 .section-header h2 {
-  font-size: 32px;
+  font-family: "Outfit", sans-serif;
   font-weight: 700;
-  color: #1a1a1a;
-  position: relative;
-  display: inline-block;
+  font-size: 40px;
+  color: #000;
+  margin-bottom: 8px;
 }
-
 
 .section-header h2::after {
   content: "";
@@ -32,38 +33,53 @@
 }
 
 .services-section {
-  background-color: #f8f9fa;
-  text-align: center;
-  padding-top: 70px;
-  padding-bottom: 30px;
-  position: relative;
+  background: #f8f9fa;
+  /* padding: 70px 0; */
 }
 
-.service-card,
-.service-card1 {
+.slider-wrapper {
   position: relative;
-  padding: 80px 20px;
-  min-height: 420px;
+  max-width: 1300px;
+  margin: auto;
+}
+
+.services-slider {
+  overflow: hidden;
+  width: 100%;
+}
+
+.services-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.service-item {
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.service-card1 {
+  padding: 80px 25px;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease;
-
+  transition: 0.3s;
+  border-radius: 12px;
+  width: 100%;
 }
 
-.service-card h3,
-.service-card1 h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-
-.service-card p,
-.service-card1 p {
-  font-size: 1rem;
-  line-height: 1.6;
-  opacity: 0.95;
+.service-card {
+  padding: 60px 25px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  border-radius: 12px;
+  width: 100%;
 }
 
 .service-card:hover,
@@ -73,11 +89,11 @@
 
 .teal-card {
   background: linear-gradient(180deg, #0084aa 0%, #00334e 100%);
-  color: #ffffff;
+  color: #fff;
 }
 
 .white-card {
-  background: #80808024;
+  background: #f1f1f1;
   color: #0084aa;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
 }
@@ -93,7 +109,7 @@
 }
 
 .teal-card .icon-box {
-  background: #ffffff;
+  background: #fff;
 }
 
 .white-card .icon-box {
@@ -107,88 +123,120 @@
 .icon-box img {
   width: 40px;
   height: 40px;
-  object-fit: contain;
 }
-.card.class{
-  height: 300px;
-  width: 100%;
+
+.service-card h3,
+.service-card1 h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: center;
 }
-.services-grid {
-  margin-top: 0;
-  padding-top: 0px;
+
+.service-card p,
+.service-card1 p {
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: center;
 }
 
 .service-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: transparent;
+  background: #fff;
   border: none;
-  font-size: 70px;
-  color: grey;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 28px;
   cursor: pointer;
-  z-index: 5;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  z-index: 10;
 }
 
 .service-arrow.left {
-  left: 0;
+  left: -20px;
 }
 
 .service-arrow.right {
-  right: 0;
+  right: -20px;
 }
 
-@media (max-width: 992px) {
+/* TABLET */
+
+@media (max-width: 1024px) {
+  .section-header h2 {
+    font-size: 34px;
+  }
 
   .service-card,
   .service-card1 {
-    min-height: 420px;
+    min-height: 340px;
   }
 }
+
+/* MOBILE */
 
 @media (max-width: 768px) {
+  .section-header h2 {
+    font-size: 28px;
+  }
+
+  .slider-wrapper {
+    padding: 0 10px;
+  }
+
   .service-arrow {
-    display: none !important;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+  }
+
+  .service-arrow.left {
+    left: 5px;
+  }
+
+  .service-arrow.right {
+    right: 5px;
   }
 
   .service-card,
   .service-card1 {
-    flex-direction: row;
-    text-align: center;
-    padding-left: 24px;
-    padding-right: 24px;
-    margin-left: 75px;
-  }
-
-  .icon-box {
-    margin-right: 60%;
-    width: 20%;
+    padding: 30px 10px;
+    min-height: auto;
   }
 
   .service-card h3,
   .service-card1 h3 {
-    width: 62%;
-    margin-right: 30%;
+    margin-right: 30px;
   }
 
   .service-card p,
   .service-card1 p {
-    width: 60%;
-    margin-right: 30%;
+    margin-right: 30px;
+  }
+
+  .icon-box {
+    width: 70px;
+    height: 70px;
+    margin-right: 50%;
+  }
+
+  .icon-box img {
+    width: 32px;
+  }
+
+  .services-section {
+    padding: 50px 0;
+    /* background-color: red; */
   }
 }
 
-.services-grid {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
+/* SMALL MOBILE */
 
-.section-header {
-  margin-bottom: 10px !important;
-}
-
-.services-section {
-  padding-top: 70px !important;
-  padding-bottom: 30px !important;
-  margin-bottom: 0 !important;
+@media (max-width: 480px) {
+  .services-section {
+    padding: 50px 0;
+  }
 }

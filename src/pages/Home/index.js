@@ -10,22 +10,46 @@ import why3 from "../../assets/Images/why-choose-icon-3.svg";
 import why4 from "../../assets/Images/why-choose-icon-4.svg";
 import why5 from "../../assets/Images/why-choose-icon-5.svg";
 import why6 from "../../assets/Images/why-choose-icon-6.svg";
-import ConsultModal from "../../components/ConsultationModal/index.js";
 
+import ConsultModal from "../../components/ConsultationModal/index.js";
 import Services from "./Services/index.js";
+
 import AOS from "aos";
 import "aos/dist/aos.css";
+
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Home = () => {
+  const [showModal, setShowModal] = useState(false);
 
-   const [showModal, setShowModal] = useState(false); // modal state
-
- 
   useEffect(() => {
     AOS.init({ duration: 1000 });
+  }, []);
+
+  useEffect(() => {
+    const counters = document.querySelectorAll(".num");
+
+    counters.forEach((counter) => {
+      const target = +counter.getAttribute("data-target");
+      const speed = 200;
+      const increment = target / speed;
+
+      let count = 0;
+
+      const updateCount = () => {
+        count += increment;
+
+        if (count < target) {
+          counter.innerText = Math.ceil(count) + "+";
+          requestAnimationFrame(updateCount);
+        } else {
+          counter.innerText = target + "+";
+        }
+      };
+
+      updateCount();
+    });
   }, []);
 
   useEffect(() => {
@@ -76,47 +100,60 @@ const Home = () => {
 
   return (
     <>
+
       <section className="hero-slider">
         <div className="hero-bg-overlay"></div>
 
         <div className="container hero-flex">
           <div className="hero-text-side">
-           
-<button
-  className="btn-hero-main"
-  onClick={() => {
-    console.log("BUTTON CLICKED");
-    setShowModal(true);
-  }}
->
-  <span>Get free Consultation</span>
-</button>
+            <button
+              className="btn-hero-main"
+              onClick={() => setShowModal(true)}
+            >
+              <span>Get free Consultation</span>
+            </button>
 
             <div className="hero-counters">
               <div className="counter">
-                <span className="num" data-target="500" data-suffix="+">
-                  500+
+                <span className="num" data-target="100">
+                  0+
                 </span>
-                <span className="label">Certified Clients</span>{" "}
+                <span className="label">Certified Clients</span>
               </div>
+
               <div className="counter">
-                {" "}
-                <span className="num" data-target="15" data-suffix="+">
-                  15+
+                <span className="num" data-target="15">
+                  0+
                 </span>
                 <span className="label">Years Experience</span>
               </div>
 
               <div className="counter">
-                <span className="num" data-target="98" data-suffix="%">
-                  98%
+                <span className="num" data-target="1000">
+                  0+
                 </span>
-                <span className="label">Success Rate</span>
+                <span className="label">Trained employees</span>
+              </div>
+
+              <div className="counter">
+                <span className="num" data-target="25000">
+                  0+
+                </span>
+                <span className="label">Man hrs of audit efforts</span>
+              </div>
+
+              <div className="counter">
+                <span className="num" data-target="5">
+                  0
+                </span>
+                <span className="label">Auditing standards</span>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* ABOUT SECTION */}
 
       <section className="about-us">
         <div className="container">
@@ -134,16 +171,23 @@ const Home = () => {
                 India, is a promising Service provider in Management Consultancy
                 services. We believe that an ISO Management system can provide
                 tremendous benefits with increased discipline and consistency.
+                Omkar Consultants is a Management Consultancy house based in
+                Ambernath, Central Mumbai providing Management Consultancy
+                Services to business sectors small, medium and large
+                organizations PAN India.
               </p>
 
               <p>
                 Omkar Consultants offers a unique fixed price business model and
                 an innovative performance guarantee. We rely on some specific
                 characteristics possessed by us for maintaining a reputed &
-                trusted position among consultancy providers.
+                trusted position among consultancy providers. These are,
+                Customer Focus, Economical and Time Specific deliverance, Prompt
+                Service, Effective training and appropriate documentation
+                expertise.
               </p>
 
-              <Link to="/IsoCertification" className="btn-knowMore">
+              <Link to="about" className="btn-knowMore">
                 Know More
               </Link>
             </div>
@@ -155,8 +199,11 @@ const Home = () => {
         </div>
       </section>
 
+      {/* SERVICES */}
+
       <Services />
-      {/* =========================why choose============ */}
+
+      {/* WHY CHOOSE */}
 
       <section className="why-choose-section">
         <div className="container">
@@ -179,7 +226,7 @@ const Home = () => {
               <h3>10+ Years Experience</h3>
               <p>
                 Extensive experience in ISO certification and consulting across
-                various industries
+                industries
               </p>
             </div>
 
@@ -207,8 +254,7 @@ const Home = () => {
               </div>
               <h3>Pan India Support</h3>
               <p>
-                Services available across India with dedicated support for all
-                regions
+                Services available across India with dedicated regional support
               </p>
             </div>
 
@@ -263,11 +309,9 @@ const Home = () => {
       <Contact />
       <Footer />
 
-      <ConsultModal
-  show={showModal}
-  onClose={() => setShowModal(false)}
-/>
+      <ConsultModal show={showModal} onClose={() => setShowModal(false)} />
     </>
   );
 };
+
 export default Home;

@@ -189,16 +189,16 @@ const ContactUs = () => {
               </div>
             </div>
             <div className="map-card">
-  <iframe
-    src="https://www.google.com/maps?q=Mumbai&output=embed"
-    width="100%"
-    height="100%"
-    style={{ border: 0 }}
-    allowFullScreen=""
-    loading="lazy"
-    title="Mumbai Map"
-  ></iframe>
-</div>
+              <iframe
+                src="https://www.google.com/maps?q=394/4%20Radha%20Apartment%20Sai%20Section%20Ambernath%20East%20421501&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                title="Omkar Consultants Location"
+              ></iframe>
+            </div>
           </div>
         </div>
       </section>

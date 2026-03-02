@@ -2,17 +2,20 @@
   position: relative;
   width: 100%;
   height: 580px;
-  overflow: hidden;
 }
 
 .hero-bg-IsoStandards {
   position: absolute;
+  inset: 0;
   width: 100%;
-  height: 607px;
+  height: 100%;
   object-fit: cover;
-  z-index: 0;
 }
-
+@media (max-width: 768px) {
+  .IsoStandards-hero {
+    min-height: 40vh;
+  }
+}
 .hero-overlay-IsoStandards {
   position: absolute;
   inset: 0;

@@ -5,20 +5,16 @@
   overflow: hidden;
 }
 
+
+
 .services-hero-bg {
   position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 0;
 }
 
-.services-hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  z-index: 1;
-}
 
 .services-hero-content {
   position: absolute;

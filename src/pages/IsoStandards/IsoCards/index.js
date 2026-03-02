@@ -115,7 +115,7 @@ const IsoCard = () => {
                   <p className="isoStandards-price-label">{card.fees}</p>
                   <h4 className="isoStandards-price">{card.price}</h4>
                   <p className="isoStandards-description">{card.description}</p>
-                  <Link to="#" className="isoStandards-btn-enquire">
+                  <Link to="/IsoCertification" className="isoStandards-btn-enquire">
                     Enquire Now
                   </Link>
                 </div>

@@ -14,15 +14,7 @@ const Services = () => {
       <section className="services-hero-section">
         <img src={ServicesImg} alt="Services" className="services-hero-bg" />
 
-        <div className="services-hero-overlay"></div>
-
-        <div className="services-hero-content">
-          <h1>Our Services</h1>
-          <p>
-            Comprehensive ISO consulting and training services tailored to your
-            needs
-          </p>
-        </div>
+     
 
         <button
           className="services-consult-btn"
