@@ -45,7 +45,7 @@ const IsoStandards = () => {
         show={showModal}
         onClose={() => setShowModal(false)}
       />
-
+ <Footer />
     </>
   );
 };

@@ -62,7 +62,8 @@ color:#0b82ad;
 .main-header .btn-contact{
 background:linear-gradient(90deg,#0b82ad,#053547);
 color:#ffffff;
-padding:10px 18px;
+padding:8px 18px;
+margin-bottom: 15px;
 border-radius:8px;
 font-weight:600;
 font-size:15px;
@@ -274,6 +275,14 @@ width:65px;
 }
 
 .main-header .nav-link{
+font-size:14px;
+}
+
+}
+@media (max-width:1024px){
+
+.main-header .btn-contact{
+padding:8px 12px;
 font-size:14px;
 }
 
