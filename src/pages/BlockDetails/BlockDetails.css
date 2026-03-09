@@ -1,0 +1,292 @@
+.bd-page {
+  max-width: 1300px;
+  margin: auto;
+  padding: 40px 20px;
+  font-family: Poppins, sans-serif;
+}
+
+.bd-back {
+  color: #0b82ad;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0px 0px 20px 40px;
+}
+
+.bd-hero {
+  position: relative;
+  height: 500px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.bd-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bd-hero-overlay {
+  position: absolute;
+  bottom: 60px;
+  left: 100px;
+  color: #fff;
+  max-width: 700px;
+}
+
+.bd-tag {
+  background: #0b82ad;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.bd-title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 48px;
+  margin-bottom: 10px;
+}
+
+.bd-meta {
+  display: flex;
+  gap: 8px;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.bd-section {
+  margin-top: 40px;
+}
+
+.bd-container {
+  display: flex;
+  gap: 250px;
+  align-items: flex-start;
+}
+
+.bd-article {
+  width: 634px;
+  background: #fff;
+  padding: 32px;
+  border-radius: 14px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.bd-quote {
+  border-left: 4px solid #0b82ad;
+  padding-left: 28px;
+  font-size: 20px;
+  line-height: 32px;
+  color: #364153;
+}
+
+.bd-article h2 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.bd-article h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.bd-article p {
+  font-size: 16px;
+  line-height: 28px;
+  color: #4a5568;
+}
+
+.bd-list,
+.bd-steps {
+  padding-left: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  font-size: 16px;
+  line-height: 28px;
+  color: #4a5568;
+
+  list-style: none;
+}
+
+.bd-sidebar {
+  width: 293px;
+}
+
+.bd-card {
+  background: linear-gradient(180deg, #0b82ad, #053547);
+  padding: 24px;
+  border-radius: 14px;
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.bd-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.bd-card p {
+  font-size: 16px;
+  line-height: 24px;
+  opacity: 0.9;
+}
+
+.bd-btn {
+  height: 48px;
+  border: none;
+  border-radius: 10px;
+  background: #fff;
+  color: #0b82ad;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px;
+}
+
+/* ---------- Laptop ---------- */
+
+@media (max-width: 1200px) {
+  .bd-page {
+    max-width: 1000px;
+  }
+
+  .bd-hero-overlay {
+    left: 60px;
+  }
+}
+
+@media (max-width: 992px) {
+  .bd-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .bd-article {
+    width: 100%;
+  }
+
+  .bd-sidebar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .bd-card {
+    width: 320px;
+  }
+
+  .bd-title {
+    font-size: 40px;
+    line-height: 44px;
+  }
+
+  .bd-hero-overlay {
+    left: 40px;
+  }
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 768px) {
+  .bd-page {
+    padding: 30px 16px;
+  }
+
+  .bd-hero {
+    height: 380px;
+  }
+
+  .bd-hero-overlay {
+    bottom: 40px;
+    left: 24px;
+    max-width: 90%;
+  }
+
+  .bd-title {
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  .bd-meta {
+    font-size: 14px;
+  }
+
+  .bd-article {
+    padding: 24px;
+  }
+
+  .bd-article h2 {
+    font-size: 26px;
+  }
+
+  .bd-article h3 {
+    font-size: 20px;
+  }
+
+  .bd-quote {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+/* ---------- Small Mobile ---------- */
+
+@media (max-width: 480px) {
+  .bd-hero {
+    height: 300px;
+  }
+
+  .bd-title {
+    font-size: 26px;
+    line-height: 30px;
+  }
+
+  .bd-tag {
+    font-size: 12px;
+    padding: 4px 10px;
+  }
+
+  .bd-meta {
+    font-size: 13px;
+  }
+
+  .bd-article {
+    padding: 20px;
+  }
+
+  .bd-article p {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .bd-card {
+    width: 100%;
+  }
+}

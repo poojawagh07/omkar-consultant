@@ -52,6 +52,7 @@ import ContactUs from "../ContactUs";
 import ServiceDetails from "../ServiceDetails";
 import IsoCertification from "../Iso-Certification/index.js";
 import Feedback from "../Feedback/index.js";
+import BlogDetails from "../BlockDetails/index.js";
 
 function App() {
   return (
@@ -69,7 +70,7 @@ function App() {
         <Route path="/service-details" element={<ServiceDetails />} />
         <Route path="/IsoCertification" element={<IsoCertification />} />
         <Route path="/Feedback" element={<Feedback />} />
-
+        <Route path="/blog/:id" element={<BlogDetails />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </HashRouter>

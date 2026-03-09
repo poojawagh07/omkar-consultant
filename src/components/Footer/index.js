@@ -108,7 +108,7 @@ const Footer = () => {
                 <img src={location} alt='location-icon' /> 394/4, Radha Apartment, Sai Section, Ambernath (East) – 421501, India
               </p>
             </div>
-            <div className='newsletter'>
+            {/* <div className='newsletter'>
               <h5>Newsletter</h5>
               <form className='newsletter-form'>
                 <input type='email' placeholder='Your email' />
@@ -116,7 +116,7 @@ const Footer = () => {
                   <img src={mailIcon} alt='Mail-icon' />
                 </button>
               </form>
-            </div>
+            </div> */}
           </div>
         </div>
         {/* FOOTER BOTTOM */}
@@ -125,11 +125,11 @@ const Footer = () => {
             © 2026 Omkar Consultancy. All rights reserved. Designed By :
             <a href='https://sirsonite.com/' target='_blank' rel='noopener noreferrer'>Sirsonite Solutions Pvt. Ltd.</a>
           </p>
-          <div className='footer-links'>
+          {/* <div className='footer-links'>
             <a href='#'>Privacy Policy</a>
             <a href='#'>Terms of Service</a>
             <a href='#'>Cookies Policy</a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
