@@ -243,6 +243,11 @@
   border-radius: 22px;
   object-fit: cover;
   display: block;
+  transition: transform 0.2s ease;  
+}
+
+.about-image img:hover {
+  transform: scale(1.05);
 }
 
 .btn-knowMore {

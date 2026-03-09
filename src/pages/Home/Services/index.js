@@ -3,7 +3,7 @@ import { ReactComponent as FileIcon } from "../../../assets/Images/file-icon.svg
 import { ReactComponent as TrainingIcon } from "../../../assets/Images/Trainini-card-icon.svg";
 import { ReactComponent as GroupIcon } from "../../../assets/Images/group-icon.svg";
 import "./Services.css";
-
+import { Link } from "react-router-dom";
 const ServicesSection = () => {
   const cards = [
     {
@@ -122,14 +122,14 @@ const ServicesSection = () => {
         <div className="services-slider">
           <div className="services-track">
             {[...cards, ...cards].map((card, i) => (
-              <div key={i} className="service-item">
+              <Link key={i} to="/service-details" className="service-item">
                 <div className={card.class}>
                   <div className="icon-box">{card.icon}</div>
 
                   <h3>{card.title}</h3>
                   <p>{card.desc}</p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

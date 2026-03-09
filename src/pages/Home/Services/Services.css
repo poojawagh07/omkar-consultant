@@ -1,9 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Inter:wght@400;500;600&display=swap");
 
+/* ================= HEADER ================= */
+
 .section-header {
   text-align: center;
   margin-bottom: 40px;
-  padding: 0 15px;
+  padding: 0 20px;
 }
 
 .section-header h2 {
@@ -33,8 +35,11 @@
   font-family: "Inter", sans-serif;
 }
 
+/* ================= SECTION ================= */
+
 .services-section {
   background: #f8f9fa;
+  padding: 70px 20px;
 }
 
 .slider-wrapper {
@@ -59,32 +64,26 @@
   animation-play-state: paused;
 }
 
+/* ================= CARD ================= */
+
 .service-item {
   min-width: 300px;
   padding: 15px;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
+.service-card,
 .service-card1 {
-  padding: 80px 25px;
-  min-height: 400px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
-  width: 100%;
-}
-
-.service-card {
   padding: 60px 25px;
-  min-height: 400px;
+  min-height: 360px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 12px;
   width: 100%;
+  transition: 0.3s;
 }
 
 .service-card:hover,
@@ -102,6 +101,8 @@
   color: #0084aa;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
 }
+
+/* ================= ICON ================= */
 
 .icon-box {
   width: 85px;
@@ -121,14 +122,12 @@
   background: #0084aa;
 }
 
-.white-card .icon-box img {
-  filter: brightness(0) invert(1);
-}
-
 .icon-box img {
   width: 40px;
   height: 40px;
 }
+
+/* ================= TEXT ================= */
 
 .service-card h3,
 .service-card1 h3 {
@@ -147,6 +146,8 @@
   font-family: "Inter", sans-serif;
 }
 
+/* ================= SLIDER ================= */
+
 @keyframes servicesMarquee {
   0% {
     transform: translateX(0);
@@ -157,66 +158,110 @@
   }
 }
 
+/* ================= LAPTOP ================= */
+
+@media (max-width: 1200px) {
+
+  .service-item {
+    min-width: 280px;
+  }
+
+}
+
 /* ================= TABLET ================= */
 
+@medi/* ================= TABLET / SMALL LAPTOP ================= */
+
 @media (max-width: 1024px) {
+
   .section-header h2 {
     font-size: 34px;
-    font-family: "Outfit", sans-serif;
-  }
-
-  .service-card,
-  .service-card1 {
-    min-height: 340px;
-  }
-}
-
-/* ================= MOBILE ================= */
-
-@media (max-width: 768px) {
-  .section-header h2 {
-    font-size: 28px;
-  }
-
-  .service-card,
-  .service-card1 {
-    padding: 30px 10px;
-    min-height: auto;
-  }
-
-  .icon-box {
-    width: 70px;
-    height: 70px;
-    margin-right: 50%;
-  }
-
-  .service-card h3,
-  .service-card1 h3 {
-    margin-right: 10%;
-  }
-
-  .service-card p,
-  .service-card1 p {
-    margin-right: 10%;
-  }
-
-  .icon-box img {
-    width: 32px;
-  }
-
-  .services-section {
-    padding: 50px 0;
-  }
-}
-
-/* ================= SMALL MOBILE ================= */
-
-@media (max-width: 480px) {
-  .services-section {
-    padding: 50px 0;
   }
 
   .service-item {
     min-width: 260px;
   }
+
+  .service-card,
+  .service-card1 {
+    padding: 40px 20px;
+    min-height: 320px;
+  }
+
+}a (max-width: 992px) {
+
+  .section-header h2 {
+    font-size: 34px;
+  }
+
+  .service-item {
+    min-width: 260px;
+  }
+
+  .service-card,
+  .service-card1 {
+    padding: 40px 20px;
+    min-height: 320px;
+  }
+
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+  .services-section {
+    padding: 60px 15px;
+  }
+
+  .section-header h2 {
+    font-size: 28px;
+  }
+
+  .section-header p {
+    font-size: 15px;
+  }
+
+  .service-item {
+    min-width: 240px;
+  }
+
+  .icon-box {
+    width: 65px;
+    height: 65px;
+  }
+
+  .icon-box img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .service-card h3,
+  .service-card1 h3 {
+    font-size: 18px;
+  }
+
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 480px) {
+
+  .services-section {
+    padding: 50px 10px;
+  }
+
+  .section-header h2 {
+    font-size: 24px;
+  }
+
+  .service-item {
+    min-width: 220px;
+  }
+
+  .service-card,
+  .service-card1 {
+    padding: 30px 15px;
+  }
+
 }

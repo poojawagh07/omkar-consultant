@@ -1,14 +1,14 @@
 import { useState } from "react";
-import"./Contact.css";
-const ContactForm = () => {
+import "./Contact.css";
 
+const ContactForm = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     mobile: "",
     company: "",
-    iso: "",
-    message: ""
+    service: "",
+    message: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -16,7 +16,7 @@ const ContactForm = () => {
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -43,8 +43,8 @@ const ContactForm = () => {
       newErrors.company = "Company name is required";
     }
 
-    if (!formData.iso) {
-      newErrors.iso = "Please select ISO standard";
+    if (!formData.service) {
+      newErrors.service = "Please select service";
     }
 
     return newErrors;
@@ -64,13 +64,9 @@ const ContactForm = () => {
   return (
     <section className="contact">
       <div className="form-container">
-
-        <div className="header">
-          Request a Free Consultation
-        </div>
+        <div className="header">Request a Free Consultation</div>
 
         <form className="form-body" onSubmit={handleSubmit}>
-
           <div className="form-group">
             <label>Full Name</label>
             <input
@@ -98,7 +94,7 @@ const ContactForm = () => {
           <div className="form-group">
             <label>Mobile Number</label>
             <input
-              type="number"
+              type="tel"
               name="mobile"
               placeholder="+91 XXXXX XXXXX"
               value={formData.mobile}
@@ -120,18 +116,21 @@ const ContactForm = () => {
           </div>
 
           <div className="form-group">
-            <label>ISO Standard</label>
+            <label>Services</label>
             <select
-              name="iso"
-              value={formData.iso}
+              name="service"
+              value={formData.service}
               onChange={handleChange}
             >
-              <option value="" disabled>Select ISO Standard</option>
-              <option value="ISO 9001">ISO 9001</option>
-              <option value="ISO 14001">ISO 14001</option>
-              <option value="ISO 45001">ISO 45001</option>
+              <option value="">Select Service</option>
+              <option value="Gap Audits">Gap Audits</option>
+              <option value="Customized Trainings">Customized Trainings</option>
+              <option value="Standard Trainings">Standard Trainings</option>
+              <option value="Internal Audits">Internal Audits</option>
+              <option value="Supplier Audits">Supplier Audits</option>
+              <option value="Documentation">Documentation</option>
             </select>
-            {errors.iso && <small>{errors.iso}</small>}
+            {errors.service && <small>{errors.service}</small>}
           </div>
 
           <div className="form-group">
@@ -148,7 +147,6 @@ const ContactForm = () => {
           <button type="submit" className="btn-contact">
             Submit
           </button>
-
         </form>
       </div>
     </section>

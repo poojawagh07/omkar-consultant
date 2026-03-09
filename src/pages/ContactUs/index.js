@@ -82,7 +82,7 @@ const ContactUs = () => {
               </svg>
             </div>
            
-            <p>Office Address<br></br>123 Business Center<br></br>Commercial Road<br></br>Mumbai - 400001, India</p>
+            <p>Office Address<br></br>394/4, Radha Apartment, Sai Section, Ambernath (East) – 421501, India</p>
             
           </div>
           <div className="contact-card">
@@ -98,7 +98,7 @@ const ContactUs = () => {
               </svg>
             </div>
             <h3>Phone</h3>
-            <p>+91 98765 43210</p>
+            <p>+91 9930054078</p>
           </div>
           <div className="contact-card">
             <div className="icon-circle">
@@ -120,7 +120,7 @@ const ContactUs = () => {
               </svg>
             </div>
             <h3>Email</h3>
-            <p>info@omkarconsultancy.com</p>
+            <p>info@omkarconsultants.com</p>
           </div>
         </div>
       </section>

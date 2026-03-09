@@ -1,0 +1,59 @@
+.floating-buttons {
+  position: fixed;
+  right: 20px;
+  bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 999;
+}
+
+.float-btn {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: 0.3s;
+}
+
+.float-btn img {
+  width: 24px;
+  height: 24px;
+}
+
+.float-btn:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp {
+  background: #25d366;
+}
+
+.call {
+  background: #ff0000;
+}
+
+.enquiry {
+background: linear-gradient(90deg, #0b82ad, #053547);}
+
+.float-btn {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.call {
+  background: #ff0000;
+}
+
+.icon {
+  width: 26px;
+  height: 26px;
+  fill: #fff;
+}

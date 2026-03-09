@@ -65,8 +65,9 @@
 
 .bd-container {
   display: flex;
-  gap: 250px;
+  gap: 150px;
   align-items: flex-start;
+  justify-content: center;
 }
 
 .bd-article {

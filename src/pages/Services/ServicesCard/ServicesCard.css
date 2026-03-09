@@ -35,20 +35,7 @@
   max-width: 650px;
   margin: 0 auto;
   line-height: 1.6;
-  padding:10px;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  padding-top: 40px;
-}
-
-.service-item {
-  text-align: center;
-  width: 100%;
-  max-width: 320px;
+  padding: 10px;
 }
 
 .services-grid,
@@ -56,13 +43,15 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  padding-top: 100px;
+  padding-top: 40px;
   margin-bottom: 50px;
 }
-.btn-consult,
-.btn-consult:hover,
-.btn-consult:focus {
-  text-decoration: none;
+
+.service-item {
+  text-align: center;
+  width: 100%;
+  max-width: 320px;
+  margin: auto;
 }
 
 .service-card,
@@ -97,7 +86,15 @@
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
 }
 
-
+.icon-box {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 25px auto; /* centers icon */
+}
 
 .teal-card .icon-box {
   background: #ffffff;
@@ -105,18 +102,21 @@
 
 .white-card .icon-box {
   background: #0084aa;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
-
+.icon-box img {
+  width: 32px;
+  height: 32px;
+}
 
 .service-card h3,
 .service-card1 h3 {
   font-size: 23px;
   font-weight: 700;
   margin-bottom: 12px;
-     font-family: "Outfit", sans-serif;
-
+  font-family: "Outfit", sans-serif;
+  text-align: center;
 }
 
 .service-card p,
@@ -124,7 +124,8 @@
   font-size: 15px;
   line-height: 1.6;
   opacity: 0.95;
-  font-family:'Inter',sans-serif;
+  font-family: "Inter", sans-serif;
+  text-align: center;
 }
 
 .learn-more {
@@ -137,7 +138,7 @@
   color: #047da8;
   text-decoration: none;
   transition: 0.3s ease;
-   font-family: "Outfit", sans-serif;
+  font-family: "Outfit", sans-serif;
 }
 
 .learn-more:hover {
@@ -149,11 +150,9 @@
   transform: translateY(-10px);
 }
 
-/* ===============================   RESPONSIVE ================================= */
-
-/* Tablet */
 @media (max-width: 992px) {
-  .services-grid {
+  .services-grid,
+  .services-grid2 {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -161,40 +160,10 @@
   .service-card1 {
     padding: 60px 20px;
     min-height: 380px;
-    justify-content: center;
-  }
-
-  .icon-box {
-    width: 70px;
-    height: 70px;
-
-    margin-left: 140px;
-  }
-
-  .icon-box img {
-    width: 30px;
-    height: 30px;
-  }
-
-  .service-card h3,
-  .service-card1 h3 {
-    font-size: 18px;
-    margin-left: 50px;
-  }
-
-  .service-card p,
-  .service-card1 p {
-    font-size: 14px;
-    margin-left: 60px;
   }
 }
 
-/* Mobile */
 @media (max-width: 600px) {
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-
   .services-section {
     padding: 70px 15px;
   }
@@ -207,15 +176,22 @@
     font-size: 14px;
   }
 
+  .services-grid,
+  .services-grid2 {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
   .service-card,
   .service-card1 {
     min-height: auto;
-    padding: 60px 25px;
+    padding: 60px 20px;
   }
 
   .icon-box {
     width: 60px;
     height: 60px;
+    margin: 20px auto;
   }
 
   .icon-box img {
@@ -223,27 +199,18 @@
     height: 26px;
   }
 
+  .white-card .icon-box {
+    margin-top: 40px;
+  }
+
   .learn-more {
     font-size: 14px;
   }
 }
-@media (max-width: 992px) {
+
+@media (min-width: 1000px) and (max-width: 1050px) {
   .services-grid,
   .services-grid2 {
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .services-grid,
-  .services-grid2 {
-    grid-template-columns: 1fr;
-    justify-items: center; /* 🔥 centers grid items */
-    /* margin-bottom: 100x; */
-  }
-}
-@media (max-width: 600px) {
-  .white-card .icon-box {
-    margin-top: 40px;
   }
 }

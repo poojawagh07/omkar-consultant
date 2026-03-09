@@ -32,8 +32,7 @@
 .main-header .nav-menu {
   display: flex;
   list-style: none;
-  gap: 35px;
-
+  gap: 23px;
   margin-top: 20px;
 }
 
@@ -42,8 +41,8 @@
   text-decoration: none;
   color: #0c0c0d;
   font-family: "Roboto", sans-serif;
-  font-size: 17px;
-  font-weight: 500;
+  font-size: 18px;
+  font-weight: 400;
   padding: 6px 0;
 }
 
@@ -154,7 +153,7 @@
 
 @media (max-width: 1024px) {
   .main-header .nav-menu {
-    gap: 25px;
+    gap: 20px;
   }
 
   .main-header .nav-link {
@@ -198,7 +197,7 @@
     flex: 1;
     overflow-y: auto;
     flex-direction: column;
-    gap: 16px;
+    gap: 13px;
     width: 100%;
   }
 

@@ -100,7 +100,6 @@ const Home = () => {
 
   return (
     <>
-
       <section className="hero-slider">
         <div className="hero-bg-overlay"></div>
 
@@ -208,7 +207,7 @@ const Home = () => {
       <section className="why-choose-section">
         <div className="container">
           <div className="section-header" data-aos="fade-up">
-            <h2>Why Choose Omkar Consultancy</h2>
+            <h2>Why Choose Omkar Consultants</h2>
             <p>
               Your trusted partner for ISO certification and training excellence
             </p>
