@@ -34,6 +34,7 @@ const Home = () => {
   const [banner, setBanner] = useState(null);
   const [features, setFeatures] = useState(fallbackFeatures);
   const [loading, setLoading] = useState(true);
+  const [counters, setCounters] = useState([]);
 
   const icons = [why1, why2, why3, why4, why5, why6];
 
@@ -42,54 +43,37 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    const controller = new AbortController();
+  const controller = new AbortController();
 
-    fetch(
-      "https://www.sirsonite.in/sirsonite-d/omkaradmin/api/home-banner",
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        signal: controller.signal,
+  fetch(
+    "https://www.sirsonite.in/sirsonite-d/omkaradmin/api/home-banner",
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      signal: controller.signal,
+    }
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("HOME API:", data);
+
+      if (data?.banner) {
+        setBanner(data.banner);
       }
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        if (data?.banner) {
-          setBanner(data.banner);
-        }
-      })
-      .catch((err) => console.log("Banner API failed:", err));
 
-    setTimeout(() => controller.abort(), 5000);
-    return () => controller.abort();
-  }, []);
+      if (data?.counters) {
+        setCounters(data.counters); // ✅ THIS WAS MISSING
+      }
+    })
+    .catch((err) => console.log("Banner API failed:", err));
 
-  useEffect(() => {
-    const counters = document.querySelectorAll(".num");
+  setTimeout(() => controller.abort(), 5000);
+  return () => controller.abort();
+}, []);
 
-    counters.forEach((counter) => {
-      const target = +counter.getAttribute("data-target");
-      const speed = 200;
-      const increment = target / speed;
 
-      let count = 0;
-
-      const updateCount = () => {
-        count += increment;
-
-        if (count < target) {
-          counter.innerText = Math.ceil(count) + "+";
-          requestAnimationFrame(updateCount);
-        } else {
-          counter.innerText = target + "+";
-        }
-      };
-
-      updateCount();
-    });
-  }, []);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -123,7 +107,6 @@ const Home = () => {
 
   return (
     <>
-      {/* HERO */}
       <section
         className="hero-slider"
         style={{
@@ -144,21 +127,13 @@ const Home = () => {
             </button>
 
             <div className="hero-counters">
-              {[
-                { num: 100, label: "Certified Clients" },
-                { num: 15, label: "Years Experience" },
-                { num: 1000, label: "Trained employees" },
-                { num: 25000, label: "Man hrs of audit efforts" },
-                { num: 5, label: "Auditing standards" },
-              ].map((item, i) => (
-                <div className="counter" key={i}>
-                  <span className="num" data-target={item.num}>
-                    0+
-                  </span>
-                  <span className="label">{item.label}</span>
-                </div>
-              ))}
-            </div>
+  {counters.map((item, i) => (
+    <div className="counter" key={i}>
+      <span className="num">{item.value}</span>
+      <span className="label">{item.name}</span>
+    </div>
+  ))}
+</div>
           </div>
         </div>
       </section>

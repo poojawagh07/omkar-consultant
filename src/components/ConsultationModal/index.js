@@ -41,7 +41,7 @@ const ConsultationModal = ({ show, onClose }) => {
 
       const result = await response.json();
 
-      if (result.status) {
+      if (result.status === true || result.success === true) {
         alert("Enquiry submitted successfully ✅");
 
         setFormData({
@@ -138,8 +138,8 @@ const ConsultationModal = ({ show, onClose }) => {
               </div>
             </div>
 
-            <div className="form-group full-width">
-              <label>
+            <div className="form-group">
+              <label style={{ display: "block", paddingTop: "15px" }}>
                 Service / Training <span>*</span>
               </label>
               <input
@@ -151,8 +151,10 @@ const ConsultationModal = ({ show, onClose }) => {
               />
             </div>
 
-            <div className="form-group full-width">
-              <label>Message</label>
+            <div className="form-group">
+              <label style={{ display: "block", paddingTop: "15px" }}>
+                Message
+              </label>
               <textarea
                 name="message"
                 placeholder="Tell us about your requirements..."

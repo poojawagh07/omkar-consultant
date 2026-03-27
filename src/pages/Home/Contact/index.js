@@ -21,7 +21,7 @@ useEffect(() => {
   fetch("https://sirsonite.in/sirsonite-d/omkaradmin/api/iso-standards")
     .then((res) => res.json())
     .then((data) => {
-      if (data.success) {
+      if (data.success)  {
         setIsoOptions(data.data);
       }
     })
@@ -64,64 +64,74 @@ useEffect(() => {
     return newErrors;
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+ const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    const validationErrors = validate();
-    setErrors(validationErrors);
+  const validationErrors = validate();
+  setErrors(validationErrors);
 
-    if (Object.keys(validationErrors).length === 0) {
-      setLoading(true);
+  if (Object.keys(validationErrors).length === 0) {
+    setLoading(true);
 
-      try {
-        const response = await fetch(
-          "https://sirsonite.in/sirsonite-d/omkaradmin/api/consultation",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              full_name: formData.fullName,
-              email: formData.email,
-              mobile: formData.mobile,
-              company: formData.company,
-              service: formData.service,
-              iso_standard: formData.isoStandard,
-              message: formData.message,
-            }),
-          }
-        );
+    try {
+      const formPayload = new FormData();
 
-        const data = await response.json();
+      formPayload.append("full_name", formData.fullName);
+      formPayload.append("email", formData.email);
+      formPayload.append(
+        "mobile",
+        formData.mobile.replace(/\D/g, "")
+      );
+      formPayload.append("company_name", formData.company);
+      formPayload.append("service", formData.service);
+      formPayload.append("iso_standard", formData.isoStandard);
+      formPayload.append("message", formData.message);
 
-        if (response.ok) {
-          alert("Form submitted successfully ✅");
-          console.log("Success:", data);
-
-          // Reset form
-          setFormData({
-            fullName: "",
-            email: "",
-            mobile: "",
-            company: "",
-            service: "",
-            isoStandard: "",
-            message: "",
-          });
-        } else {
-          alert("Something went wrong ❌");
-          console.log("Error:", data);
+      const response = await fetch(
+        "https://sirsonite.in/sirsonite-d/omkaradmin/api/consultation",
+        {
+          method: "POST",
+          body: formPayload,
+          headers: {
+            Accept: "application/json",
+          },
         }
-      } catch (error) {
-        console.error("API Error:", error);
-        alert("Server error ❌");
-      } finally {
-        setLoading(false);
-      }
-    }
-  };
+      );
 
+      const text = await response.text();
+      console.log("API RAW:", text);
+
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch {
+        alert("Invalid response ❌");
+        return;
+      }
+
+      if (data.success) {
+        alert("Form submitted successfully ✅");
+
+        setFormData({
+          fullName: "",
+          email: "",
+          mobile: "",
+          company: "",
+          service: "",
+          isoStandard: "",
+          message: "",
+        });
+      } else {
+        alert(data.message || "Something went wrong ❌");
+      }
+    } catch (error) {
+      console.error("API Error:", error);
+      alert("Server error ❌");
+    } finally {
+      setLoading(false);
+    }
+  }
+};
   return (
     <section className="contact">
       <div className="form-container">
@@ -234,3 +244,5 @@ useEffect(() => {
 };
 
 export default ContactForm;
+
+

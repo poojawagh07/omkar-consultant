@@ -273,7 +273,14 @@ svg {
 .recommendation-card:hover {
   border-color: #0b82ad;
 }
+.recommendation-card.active {
+  border-color: #0b82ad;
+  background-color: rgba(11, 130, 173, 0.05);
+}
 
+.recommendation-card {
+  transition: all 0.3s ease;
+}
 /* ==============================5th Section====================== */
 
 .feedback5-section {
@@ -439,3 +446,7 @@ svg {
     font-size: 16px;
   }
 }
+.form-feedback{
+  padding-bottom: 30px;
+}
+

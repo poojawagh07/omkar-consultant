@@ -10,14 +10,13 @@ const ServiceDetails = () => {
   const { slug } = useParams();
   const [service, setService] = useState(null);
   const [showModal, setShowModal] = useState(false);
+
   const navigate = useNavigate();
 
   useEffect(() => {
     if (!slug || slug === "undefined") return;
 
-    fetch(
-      `https://www.sirsonite.in/sirsonite-d/omkaradmin/api/service/${slug}`
-    )
+    fetch(`https://www.sirsonite.in/sirsonite-d/omkaradmin/api/service/${slug}`)
       .then((res) => res.json())
       .then((data) => setService(data.data))
       .catch((err) => console.log(err));
@@ -34,26 +33,29 @@ const ServiceDetails = () => {
           <h1 className="gap-heading">{service.title}</h1>
 
           {service.content1 && (
-            <p className="gap-description">{service.content1}</p>
+            <p
+              className="gap-description"
+              dangerouslySetInnerHTML={{ __html: service.content1 }}
+            />
           )}
         </div>
       </section>
 
       <section className="service-overview-section">
         <div className="service-container">
-         <div className="service-image">
-  <img
-    src={service.image || Gap1}
-    alt={service.title}
-  />
-</div>
+          <div className="service-image">
+            <img src={service.image || Gap1} alt={service.title} />
+          </div>
 
           <div className="service-content">
             <h2>Service Overview</h2>
+            {service.content1 && (
+              <p dangerouslySetInnerHTML={{ __html: service.content1 }} />
+            )}
 
-            {service.content1 && <p>{service.content1}</p>}
-            {service.content2 && <p>{service.content2}</p>}
-
+            {service.content2 && (
+              <p dangerouslySetInnerHTML={{ __html: service.content2 }} />
+            )}
             <button
               className="consult-btn-servises"
               onClick={() => setShowModal(true)}
@@ -71,8 +73,7 @@ const ServiceDetails = () => {
 
             <div className="features-grid">
               {service.features.map((item, i) => {
-                const text =
-                  typeof item === "string" ? item : item.text;
+                const text = typeof item === "string" ? item : item.text;
 
                 const icon =
                   typeof item === "object" && item.icon
@@ -94,7 +95,6 @@ const ServiceDetails = () => {
       {(service.benefits?.length > 0 || service.who_needs?.length > 0) && (
         <section className="benefits-section">
           <div className="benefits-wrapper">
-
             {service.benefits?.length > 0 && (
               <div className="benefits-column">
                 <h3>Benefits</h3>
@@ -146,14 +146,12 @@ const ServiceDetails = () => {
           <h2>Ready to Get Started?</h2>
 
           <p>
-            Contact us today for a free consultation and learn how our service can help your organization
+            Contact us today for a free consultation and learn how our service
+            can help your organization
           </p>
 
           <div className="cta-buttons">
-            <button
-              className="cta-primary"
-              onClick={() => setShowModal(true)}
-            >
+            <button className="cta-primary" onClick={() => setShowModal(true)}>
               Get Free Consultation
             </button>
 

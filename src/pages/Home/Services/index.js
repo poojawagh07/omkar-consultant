@@ -1,166 +1,3 @@
-// import React, { useEffect, useState } from "react";
-// import "./Services.css";
-// import { Link } from "react-router-dom";
-
-// const ServicesSection = () => {
-//   const [apiData, setApiData] = useState([]);
-
-//   // 🔥 ICON + CLASS MAPPING (INLINE SVG)
-//   const getCardConfig = (title, index) => {
-//     const iconMap = {
-//       "Gap Audit": (
-//         <svg
-//           xmlns="http://www.w3.org/2000/svg"
-//           width="44"
-//           height="37"
-//           viewBox="0 0 44 37"
-//           fill="none"
-//         >
-//           <path
-//             d="M16.2731 27.3684C11.725 27.3684 7.87619 26.0435 4.72672 23.3937C1.57724 20.7439 0.00167036 17.5074 1.32463e-06 13.6842C-0.00166771 9.86105 1.5739 6.62456 4.72672 3.97474C7.87953 1.32491 11.7283 0 16.2731 0C20.8179 0 24.6675 1.32491 27.822 3.97474C30.9765 6.62456 32.5512 9.86105 32.5462 13.6842C32.5462 15.2281 32.2542 16.6842 31.67 18.0526C31.0858 19.4211 30.293 20.6316 29.2916 21.6842L43.3115 33.4737C43.7705 33.8596 44 34.3509 44 34.9474C44 35.5439 43.7705 36.0351 43.3115 36.421C42.8525 36.807 42.2684 37 41.559 37C40.8497 37 40.2655 36.807 39.8065 36.421L25.7866 24.6316C24.5349 25.4737 23.0953 26.1403 21.468 26.6316C19.8407 27.1228 18.1091 27.3684 16.2731 27.3684ZM16.2731 23.1579C19.4026 23.1579 22.063 22.2372 24.2545 20.3958C26.4459 18.5544 27.5408 16.3172 27.5391 13.6842C27.5375 11.0512 26.4426 8.81474 24.2545 6.97474C22.0663 5.13474 19.4059 4.21333 16.2731 4.21053C13.1403 4.20772 10.4807 5.12912 8.29428 6.97474C6.10784 8.82035 5.01212 11.0568 5.00711 13.6842C5.00211 16.3116 6.09783 18.5488 8.29428 20.3958C10.4907 22.2428 13.1503 23.1635 16.2731 23.1579Z"
-//             fill="#0B82AD"
-//           />
-//         </svg>
-//       ),
-
-//       "Internal Audit": (
-//         <svg
-//           xmlns="http://www.w3.org/2000/svg"
-//           width="44"
-//           height="44"
-//           viewBox="0 0 44 44"
-//           fill="none"
-//         >
-//           <path
-//             d="M16.4189 7.29733H10.0337C9.79183 7.29733 9.55981 7.39344 9.38875 7.5645C9.21769 7.73556 9.12158 7.96758 9.12158 8.2095V39.2231C9.12158 39.4651 9.21769 39.6971 9.38875 39.8681C9.55981 40.0392 9.79183 40.1353 10.0337 40.1353H35.5744C35.8163 40.1353 36.0483 40.0392 36.2194 39.8681C36.3905 39.6971 36.4866 39.4651 36.4866 39.2231V8.2095C36.4866 7.96758 36.3905 7.73556 36.2194 7.5645C36.0483 7.39344 35.8163 7.29733 35.5744 7.29733H29.1892"
-//             stroke="white"
-//             stroke-width="2"
-//           />
-//           <path
-//             d="M16.4189 11.8582V7.29734H20.022C20.0341 7.29734 20.0457 7.29254 20.0543 7.28398C20.0628 7.27543 20.0676 7.26383 20.0676 7.25173V5.47301C20.0676 5.11365 20.1384 4.7578 20.2759 4.4258C20.4134 4.09379 20.615 3.79212 20.8691 3.53801C21.1232 3.28391 21.4249 3.08234 21.7569 2.94481C22.0889 2.80729 22.4447 2.73651 22.8041 2.73651C23.1635 2.73651 23.5193 2.80729 23.8513 2.94481C24.1833 3.08234 24.485 3.28391 24.7391 3.53801C24.9932 3.79212 25.1948 4.09379 25.3323 4.4258C25.4698 4.7578 25.5406 5.11365 25.5406 5.47301V7.25173C25.5406 7.27727 25.5607 7.29734 25.5862 7.29734H29.1893V11.8582C29.1893 12.1001 29.0932 12.3321 28.9221 12.5032C28.751 12.6742 28.519 12.7703 28.2771 12.7703H17.3311C17.0892 12.7703 16.8572 12.6742 16.6861 12.5032C16.515 12.3321 16.4189 12.1001 16.4189 11.8582Z"
-//             stroke="white"
-//             stroke-width="2"
-//           />
-//         </svg>
-//       ),
-
-//       "Customized Trainings": (
-//          <svg
-//           xmlns="http://www.w3.org/2000/svg"
-//           width="38"
-//           height="38"
-//           viewBox="0 0 38 38"
-//           fill="none"
-//         >
-//           <g clip-path="url(#clip0_119_66)">
-//             <path
-//               d="M35.3947 29.9998C35.6927 29.7678 35.9303 29.4671 36.0872 29.1235C36.2441 28.7799 36.3157 28.4034 36.2959 28.0262C36.2761 27.649 36.1655 27.2821 35.9734 26.9568C35.7814 26.6315 35.5136 26.3574 35.1929 26.1578L35.1836 12.5019L32.838 14.0734V26.1531C32.5205 26.3523 32.2554 26.6246 32.0648 26.9473C31.8742 27.27 31.7638 27.6336 31.7426 28.0078C31.7215 28.382 31.7903 28.7558 31.9434 29.0979C32.0964 29.44 32.3292 29.7404 32.6222 29.974L31.7356 31.1515C30.947 32.1547 30.5102 33.3893 30.4924 34.6652V37.5315H32.404C32.8633 37.5314 33.3094 37.3782 33.6718 37.0962C34.0341 36.8141 34.2921 36.4192 34.4048 35.974L35.1812 32.8403V37.5315H37.5268V34.6933C37.5064 33.4113 37.0665 32.1714 36.2742 31.1632L35.3947 29.9998ZM18.7646 0L0 9.38228L18.7646 21.1101L37.5291 9.38228L18.7646 0Z"
-//               fill="#0B82AD"
-//             />
-//             <path
-//               d="M18.7645 23.4557L7.03662 15.645V19.6559C7.03662 21.7904 13.9326 28.1468 18.7645 28.1468C23.5963 28.1468 30.4923 21.7904 30.4923 19.6559V15.645L18.7645 23.4557Z"
-//               fill="#0B82AD"
-//             />
-//           </g>
-//           <defs>
-//             <clipPath id="clip0_119_66">
-//               <rect width="37.5291" height="37.5291" fill="white" />
-//             </clipPath>
-//           </defs>
-//         </svg>
-//       ),
-
-      
-
-
-
-
-
-
-//   "Transition Of Standards": (
-//     <svg width="40" height="40" viewBox="0 0 40 40">
-//       <circle cx="20" cy="20" r="18" fill="#0B82AD" />
-//     </svg>
-//   ),
-
-//   "Virtual Training": (
-//     <svg width="40" height="40" viewBox="0 0 40 40">
-//       <rect x="6" y="10" width="28" height="20" rx="4" fill="#0B82AD" />
-//     </svg>
-//   ),
-
-//   "Consultation": (
-//     <svg width="40" height="40" viewBox="0 0 40 40">
-//       <path
-//         d="M20 2C10 2 2 10 2 20C2 30 10 38 20 38C30 38 38 30 38 20C38 10 30 2 20 2Z"
-//         fill="#0B82AD"
-//       />
-//     </svg>
-//   ),
-//     };
-
-//     const className =
-//       index % 2 === 0
-//         ? "service-card teal-card"
-//         : "service-card1 white-card";
-
-//     return {
-//       icon: iconMap[title] || iconMap["Gap Audit"],
-//       className,
-//     };
-//   };
-
-//   useEffect(() => {
-//     fetch("https://www.sirsonite.in/sirsonite-d/omkaradmin/api/Services/home")
-//       .then((res) => res.json())
-//       .then((data) => setApiData(data.data || []))
-//       .catch(console.error);
-//   }, []);
-
-//   // ✅ slug generator
-//   const createSlug = (title) =>
-//     title?.toLowerCase().replace(/\s+/g, "-");
-
-//   return (
-//     <section className="services-section">
-//       <div className="section-header">
-//         <h2>Our Services</h2>
-//         <p>
-//           Comprehensive ISO consulting and training solutions tailored to your
-//           business needs
-//         </p>
-//       </div>
-
-//       <div className="slider-wrapper">
-//         <div className="services-slider">
-//           <div className="services-track">
-//             {[...apiData, ...apiData].map((item, i) => {
-//               const { icon, className } = getCardConfig(item.title, i);
-
-//               return (
-//                 <Link
-//                   key={i}
-//                   to={`/service-details/${createSlug(item.title)}`}
-//                   className="service-item"
-//                 >
-//                   <div className={className}>
-//                     <div className="icon-box">{icon}</div>
-
-//                     <h3>{item.title}</h3>
-//                     <p>{item.home_content || "No description"}</p>
-//                   </div>
-//                 </Link>
-//               );
-//             })}
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default ServicesSection;
-
 import React, { useEffect, useState } from "react";
 import "./Services.css";
 import { Link } from "react-router-dom";
@@ -168,7 +5,6 @@ import { Link } from "react-router-dom";
 const ServicesSection = () => {
   const [apiData, setApiData] = useState([]);
 
-  // 🔥 ICON + CLASS MAPPING
   const getCardConfig = (title, index) => {
     const iconMap = {
       "Gap Analysis": (
@@ -187,9 +23,8 @@ const ServicesSection = () => {
       ),
       class: "service-card teal-card",
 
-      
       "Internal Audit": (
-       <svg
+        <svg
           xmlns="http://www.w3.org/2000/svg"
           width="44"
           height="44"
@@ -209,10 +44,9 @@ const ServicesSection = () => {
         </svg>
       ),
       class: "service-card1 white-card",
-      
 
       "Customized Trainings": (
-      <svg
+        <svg
           xmlns="http://www.w3.org/2000/svg"
           width="38"
           height="38"
@@ -238,7 +72,6 @@ const ServicesSection = () => {
       ),
       class: "service-card teal-card",
 
-
       "Transition of Standards": (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -263,7 +96,7 @@ const ServicesSection = () => {
       class: "service-card1 white-card",
 
       "Virtual Training": (
-         <svg
+        <svg
           xmlns="http://www.w3.org/2000/svg"
           width="52"
           height="52"
@@ -285,10 +118,9 @@ const ServicesSection = () => {
         </svg>
       ),
       class: "service-card teal-card",
-    
 
       "Supplier Audit": (
-         <svg
+        <svg
           xmlns="http://www.w3.org/2000/svg"
           width="43"
           height="43"
@@ -303,10 +135,8 @@ const ServicesSection = () => {
       ),
       class: "service-card1 white-card",
 
-
-      "Documentation": (
-    
-         <svg
+      Documentation: (
+        <svg
           xmlns="http://www.w3.org/2000/svg"
           width="30"
           height="27"
@@ -322,34 +152,82 @@ const ServicesSection = () => {
       class: "service-card teal-card",
 
       "Certificate Upgrades": (
-        <svg width="40" height="40" viewBox="0 0 40 40">
-          <path
-            d="M20 4L30 10V20C30 26 25 30 20 32C15 30 10 26 10 20V10L20 4Z"
-            fill="#0B82AD"
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="44"
+          height="44"
+          viewBox="0 0 24 24"
+          fill="none"
+        >
+          <rect
+            x="5"
+            y="3"
+            width="14"
+            height="18"
+            rx="2"
+            stroke="#0B82AD"
+            stroke-width="2"
+          />
+
+          <line
+            x1="8"
+            y1="7"
+            x2="16"
+            y2="7"
+            stroke="#0B82AD"
+            stroke-width="2"
+          />
+
+          <line
+            x1="8"
+            y1="11"
+            x2="16"
+            y2="11"
+            stroke="#0B82AD"
+            stroke-width="2"
+          />
+          <line
+            x1="8"
+            y1="14"
+            x2="13"
+            y2="14"
+            stroke="#0B82AD"
+            stroke-width="2"
+          />
+
+          <line
+            x1="8"
+            y1="18"
+            x2="12"
+            y2="18"
+            stroke="#0B82AD"
+            stroke-width="2"
+          />
+
+          <circle
+            cx="16.5"
+            cy="17.5"
+            r="1.5"
+            stroke="#0B82AD"
+            stroke-width="2"
           />
         </svg>
       ),
-
-      
     };
 
     const className =
-      index % 2 === 0
-        ? "service-card teal-card"
-        : "service-card1 white-card";
+      index % 2 === 0 ? "service-card teal-card" : "service-card1 white-card";
 
     return {
-      icon:
-        iconMap[title] || (
-          <svg width="40" height="40">
-            <circle cx="20" cy="20" r="18" fill="#0B82AD" />
-          </svg>
-        ),
+      icon: iconMap[title] || (
+        <svg width="40" height="40">
+          <circle cx="20" cy="20" r="18" fill="#0B82AD" />
+        </svg>
+      ),
       className,
     };
   };
 
-  // 🔥 API CALL
   useEffect(() => {
     fetch("https://www.sirsonite.in/sirsonite-d/omkaradmin/api/Services/home")
       .then((res) => res.json())
@@ -357,9 +235,7 @@ const ServicesSection = () => {
       .catch(console.error);
   }, []);
 
-  // 🔥 SLUG
-  const createSlug = (title) =>
-    title?.toLowerCase().replace(/\s+/g, "-");
+  const createSlug = (title) => title?.toLowerCase().replace(/\s+/g, "-");
 
   return (
     <section className="services-section">

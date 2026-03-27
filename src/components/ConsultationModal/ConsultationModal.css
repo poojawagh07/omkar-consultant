@@ -1,5 +1,10 @@
 
-/* Overlay */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+
 .consult-overlay {
   position: fixed;
   inset: 0;
@@ -7,100 +12,96 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
   z-index: 999999;
 }
 
-/* Modal Container */
+
 .consult-modal-box {
-  width: 672px;
-  /* height: 626px; */
+  width: 100%;
+  max-width: 672px;
+  max-height: 90vh;
   background: #FFFFFF;
   border-radius: 14px;
   box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
   overflow: hidden;
-  font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
 }
 
-/* ================= HEADER ================= */
-
-.consult-header {
-  width: 100%;
-  height: 108px;
-  background: #0B82AD;
-  padding: 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  border-top-left-radius: 14px;
-  border-top-right-radius: 14px;
-}
 
 .consult-header h2 {
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 32px;
-  color: #FFFFFF;
-  margin: 0;
+  font-size: 19px;
+  color: #fff;
+  margin: 0;              
+  margin-bottom: 2px;     
+  line-height: 1;
 }
 
 .consult-header p {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
+  font-size: 13px;
   color: #DBEAFE;
-  margin-top: 4px;
+  margin: 0;              
+  line-height: 1;
+}
+.consult-header {
+  position: relative; 
+  background: #0B82AD;
+  padding: 12px;
 }
 
+
 .consult-close {
+  position: absolute;
+  top: 10px;
+  right: 12px; /* 🔥 always right */
   background: transparent;
   border: none;
-  font-size: 22px;
-  color: #FFFFFF;
+  font-size: 20px;
+  color: #fff;
   cursor: pointer;
 }
 
 
 .consult-body {
-  padding: 24px;
+  padding: 10px;
   flex: 1;
   overflow-y: auto;
 }
 
+
 .form-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px; /* 🔥 reduced spacing */
 }
 
 
 .form-group {
   display: flex;
   flex-direction: column;
+  gap: 1px; /* 🔥 very tight spacing */
+  margin: 0;
 }
 
 .form-group label {
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 20px;
+  font-size: 12px;
   color: #364153;
-  margin-bottom: 6px;
+  margin: 0;
+  line-height: 1.2;
 }
 
 .form-group label span {
-  color: #FB2C36;
+  color: red;
 }
 
 
 .form-group input {
-  width: 100%;
-  height: 42px;
-  border-radius: 10px;
-  border: 0.8px solid #D1D5DC;
-  padding: 8px 16px;
-  font-size: 14px;
-  font-family: "Poppins", sans-serif;
+  height: 40px!important;
+  border-radius: 8px;
+  border: 1px solid #D1D5DC;
+  padding: 4px 8px;
+  font-size: 13px;
   outline: none;
 }
 
@@ -108,77 +109,69 @@
   border-color: #0B82AD;
 }
 
+
 .form-group textarea {
   width: 100%;
-  height: 20px;
-  padding: 0px 8px;   
-  font-size: 12px;    
-  border-radius: 10px;
-  border: 0.8px solid #D1D5DC;
-  resize: none;
+  min-height: 40px!important;
+  padding: 8px;
+  font-size: 13px;
+  border-radius: 8px;
+  border: 1px solid #D1D5DC;
+  resize: vertical;
   outline: none;
-  box-sizing: border-box;
 }
+
 .form-group textarea:focus {
   border-color: #0B82AD;
 }
 
+
 .full-width {
-  margin-top: 16px;
+  grid-column: span 2;
+  margin-top: 2px;
 }
 
 
 .consult-footer {
-  margin-top: 24px;
+  margin-top: 12px;
   display: flex;
-  gap: 12px;
-  align-items: center;
+  gap: 8px;
 }
+
 
 .submit-btn {
   flex: 1;
-  height: 50px;
+  height: 35px !important;
   background: #0B82AD;
-  border-radius: 10px;
+  border-radius: 8px;
   border: none;
-  color: #FFFFFF;
-  font-size: 16px;
-  font-weight: 500;
+  padding: 10px !important;
+  color: #fff;
   cursor: pointer;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  transition: 0.3s ease;
+  font-size: 13px !important;
 }
-
-.submit-btn:hover {
-  background: #086b8e;
-}
-
 .cancel-btn {
-  width: 107px;
-  height: 50px;
-  border-radius: 10px;
-  border: 0.8px solid #D1D5DC;
-  background: #FFFFFF;
-  font-size: 16px;
-  font-weight: 500;
-  color: #1E293B;
+  min-width: 100px;
+  height: 35px;
+  border-radius: 8px;
+  border: 1px solid #D1D5DC;
+  background: #fff;
   cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.cancel-btn:hover {
-  background: #f5f5f5;
+  font-size: 13px;
 }
 
 
 @media (max-width: 768px) {
   .consult-modal-box {
-    width: 95%;
-    height: auto;
+    max-height: 95vh;
   }
 
   .form-grid {
     grid-template-columns: 1fr;
+  }
+
+  .full-width {
+    grid-column: span 1;
   }
 
   .consult-footer {
@@ -191,3 +184,215 @@
   }
 }
 
+
+@media (max-width: 480px) {
+  .consult-overlay {
+    padding: 1px;
+  }
+
+  .consult-modal-box {
+    border-radius: 10px;
+  }
+
+  .consult-header {
+    padding: 10px;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .consult-body {
+    padding: 8px;
+  }
+}
+
+/* ================= EXTRA RESPONSIVE FIX ================= */
+
+/* Tablets & small laptops */
+@media (max-width: 1024px) {
+  .consult-modal-box {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .consult-overlay {
+    padding: 15px;
+  }
+
+  .consult-modal-box {
+    width: 100%;
+    max-width: 100%;
+    max-height: 95vh;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .full-width {
+    grid-column: span 1;
+  }
+
+  .consult-footer {
+    flex-direction: column;
+  }
+
+  .submit-btn,
+  .cancel-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .consult-overlay {
+    padding: 10px;
+  }
+
+  .consult-modal-box {
+    max-height: 100vh;
+    border-radius: 10px;
+  }
+
+  .consult-header {
+    padding: 10px;
+  }
+
+  .consult-body {
+    padding: 8px;
+  }
+
+  .consult-close {
+    top: 8px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .consult-body {
+    padding: 6px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .consult-overlay {
+    padding: 4px !important;
+  }
+
+  .consult-modal-box {
+    max-height: 100vh !important;
+  }
+
+  .consult-header {
+    padding: 8px !important;
+  }
+
+  .consult-body {
+    padding: 6px !important;
+  }
+
+  .form-grid {
+    gap: 8px !important;
+  }
+
+  .form-group {
+    gap: 1px !important;
+  }
+  .form-group input,
+  .form-group textarea {
+    font-size: 12px !important;  
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    font-size: 11px !important;  
+  }
+  .form-group label {
+    font-size: 10px !important;
+  }
+
+  .form-group input {
+    height: 32px !important;
+    padding: 4px 6px !important;
+  }
+
+  .form-group textarea {
+    min-height: 30px !important;
+    padding: 2px !important;
+  }
+
+  .consult-footer {
+    margin-top: 6px !important;
+    gap: 6px !important;
+  }
+
+  .submit-btn,
+  .cancel-btn {
+    height: 32px !important;
+    font-size: 9px !important;
+    padding: 8px !important;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .consult-overlay {
+    padding: 4px !important;
+  }
+
+  .consult-modal-box {
+    max-height: 100vh !important;
+  }
+
+  .consult-header {
+    padding: 8px !important;
+  }
+
+  .consult-body {
+    padding: 6px !important;
+  }
+
+  .form-grid {
+    gap: 8px !important;
+  }
+
+  .form-group {
+    gap: 1px !important;
+  }
+
+  .form-group label {
+    font-size: 10px !important;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 12px !important;
+  }
+
+  .form-group input {
+    height: 32px !important;
+    padding: 4px 6px !important;
+  }
+
+  .form-group textarea {
+    min-height: 30px !important;
+    padding: 2px !important;
+  }
+
+  .consult-footer {
+    margin-top: 6px !important;
+    gap: 6px !important;
+  }
+
+  .submit-btn,
+  .cancel-btn {
+    height: 32px !important;
+    font-size: 10px !important;
+    padding: 6px !important;
+  }
+}

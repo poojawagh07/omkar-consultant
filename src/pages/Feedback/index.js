@@ -1,6 +1,9 @@
+
+// import "./Feedback1.css";
 import "./Feedback1.css";
 import Footer from "../../components/Footer/index.js";
 import { useState } from "react";
+
 const Feedback = () => {
   const [ratings, setRatings] = useState({
     overall: 0,
@@ -9,8 +12,115 @@ const Feedback = () => {
     timeliness: 0,
   });
 
+  const [formData, setFormData] = useState({
+    full_name: "",
+    email: "",
+    company: "",
+    service_used: "",
+    recommendation: "",
+    experience: "",
+    improvement: "",
+  });
+
   const handleRating = (category, value) => {
     setRatings({ ...ratings, [category]: value });
+  };
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleRecommendation = (value) => {
+    setFormData({ ...formData, recommendation: value });
+  };
+
+  const handleSubmit = async () => {
+    try {
+      if (!formData.full_name || !formData.email || !formData.service_used) {
+        alert("Please fill all required fields");
+        return;
+      }
+
+      if (!formData.recommendation) {
+        alert("Please select recommendation");
+        return;
+      }
+
+      if (
+        ratings.overall === 0 ||
+        ratings.service === 0 ||
+        ratings.professionalism === 0 ||
+        ratings.timeliness === 0
+      ) {
+        alert("Please give all ratings");
+        return;
+      }
+
+      if (!formData.experience) {
+        alert("Please enter your experience");
+        return;
+      }
+
+      const form = new FormData();
+
+      form.append("full_name", formData.full_name);
+      form.append("email", formData.email);
+      form.append("company_name", formData.company); 
+      form.append("service_used", formData.service_used);
+form.append(
+  "overall_satisfaction",
+  ratings.overall === 0 ? null : ratings.overall
+);
+
+form.append(
+  "service_quality",
+  ratings.service === 0 ? null : ratings.service
+);
+
+form.append(
+  "professionalism",
+  ratings.professionalism === 0 ? null : ratings.professionalism
+);
+
+form.append(
+  "timeliness_efficiency",
+  ratings.timeliness === 0 ? null : ratings.timeliness
+);
+      form.append("recommendation", formData.recommendation);
+      form.append("feedback", formData.experience); 
+      form.append("improvement", formData.improvement);
+
+    const res = await fetch(
+  "https://sirsonite.in/sirsonite-d/omkaradmin/api/feedback",
+  {
+    method: "POST",
+    headers: {
+      Accept: "application/json", 
+    },
+    body: form,
+  }
+);
+
+      const text = await res.text();
+      console.log("RAW RESPONSE:", text);
+
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch {
+        alert(text); 
+        return;
+      }
+
+      if (data.status === true) {
+        alert("Feedback submitted successfully ✅");
+      } else {
+        alert(data.message || "Submission failed ❌");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("API error ❌");
+    }
   };
 
   const renderStars = (category) => {
@@ -24,8 +134,11 @@ const Feedback = () => {
       </span>
     ));
   };
+
   return (
     <div>
+
+
       <section className="feedback-section">
         <div className="feedback-container">
           <div className="feedback-header">
@@ -58,7 +171,7 @@ const Feedback = () => {
         </div>
       </section>
 
-      <section className="customer-info-section">
+<section className="customer-info-section">
         <div className="customer-container">
           <h3 className="customer-heading">Customer Information</h3>
 
@@ -67,26 +180,49 @@ const Feedback = () => {
               <label>
                 Full Name <span>*</span>
               </label>
-              <input type="text" placeholder="Enter your full name" />
+              <input
+                type="text"
+                name="full_name"
+                value={formData.full_name}
+                onChange={handleChange}
+                placeholder="Enter your full name"
+              />
             </div>
 
             <div className="form-group">
               <label>
                 Email Address <span>*</span>
               </label>
-              <input type="email" placeholder="your.email@example.com" />
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="your.email@example.com"
+              />
             </div>
 
             <div className="form-group">
               <label>Company Name</label>
-              <input type="text" placeholder="Your company name" />
+              <input
+                type="text"
+                name="company"
+                value={formData.company}
+                onChange={handleChange}
+                placeholder="Your company name"
+              />
             </div>
 
             <div className="form-group">
               <label>
                 Service Used <span>*</span>
               </label>
-              <input type="text" />
+              <input
+                type="text"
+                name="service_used"
+                value={formData.service_used}
+                onChange={handleChange}
+              />
             </div>
           </div>
         </div>
@@ -159,74 +295,26 @@ const Feedback = () => {
           </div>
 
           <div className="recommendation-options">
-            <div className="recommendation-card">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 32 32"
-                fill="none"
-              >
-                <path
-                  d="M20.0013 7.84001L18.668 13.3333H26.4413C26.8553 13.3333 27.2636 13.4297 27.6339 13.6149C28.0042 13.8 28.3262 14.0688 28.5746 14.4C28.823 14.7312 28.9909 15.1157 29.065 15.523C29.139 15.9303 29.1172 16.3492 29.0013 16.7467L25.8946 27.4133C25.7331 27.9672 25.3962 28.4538 24.9346 28.8C24.473 29.1462 23.9116 29.3333 23.3346 29.3333H5.33464C4.62739 29.3333 3.94911 29.0524 3.44902 28.5523C2.94892 28.0522 2.66797 27.3739 2.66797 26.6667V16C2.66797 15.2928 2.94892 14.6145 3.44902 14.1144C3.94911 13.6143 4.62739 13.3333 5.33464 13.3333H9.01464C9.51075 13.3331 9.99695 13.1944 10.4186 12.933C10.8402 12.6715 11.1805 12.2976 11.4013 11.8533L16.0013 2.66667C16.6301 2.67446 17.249 2.82423 17.8117 3.1048C18.3745 3.38537 18.8665 3.78948 19.2512 4.28694C19.6358 4.7844 19.9031 5.36235 20.033 5.97761C20.1628 6.59286 20.152 7.22952 20.0013 7.84001Z"
-                  stroke="#4A5565"
-                  stroke-width="2.66667"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M9.33203 13.3333V29.3333"
-                  stroke="#4A5565"
-                  stroke-width="2.66667"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+            <div
+              className="recommendation-card"
+              onClick={() => handleRecommendation("Yes")}
+            >
               <p>Yes, Definitely</p>
             </div>
 
-            <div className="recommendation-card">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 32 32"
-                fill="none"
-              >
-                <path
-                  d="M29.3346 22.6667C29.3346 23.3739 29.0537 24.0522 28.5536 24.5523C28.0535 25.0524 27.3752 25.3333 26.668 25.3333H9.1053C8.39812 25.3335 7.71995 25.6145 7.21997 26.1147L4.28397 29.0507C4.15158 29.183 3.98291 29.2732 3.79929 29.3097C3.61567 29.3462 3.42534 29.3275 3.25238 29.2558C3.07941 29.1842 2.93157 29.0629 2.82755 28.9072C2.72353 28.7516 2.66799 28.5685 2.66797 28.3813V6.66667C2.66797 5.95942 2.94892 5.28115 3.44902 4.78105C3.94911 4.28095 4.62739 4 5.33464 4H26.668C27.3752 4 28.0535 4.28095 28.5536 4.78105C29.0537 5.28115 29.3346 5.95942 29.3346 6.66667V22.6667Z"
-                  stroke="#4A5565"
-                  stroke-width="2.66667"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+            <div
+              className="recommendation-card"
+              
+onClick={() => handleRecommendation("Maybe")}
+
+            >
               <p>Maybe</p>
             </div>
 
-            <div className="recommendation-card">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 32 32"
-                fill="none"
-              >
-                <path
-                  d="M11.9987 24.16L13.332 18.6667L5.5587 18.6667C5.14471 18.6667 4.73641 18.5703 4.36613 18.3851C3.99585 18.2 3.67376 17.9312 3.42536 17.6C3.17697 17.2688 3.0091 16.8843 2.93505 16.477C2.86099 16.0697 2.88278 15.6508 2.9987 15.2533L6.10536 4.58666C6.26692 4.03275 6.60377 3.54619 7.06536 3.19999C7.52695 2.8538 8.08838 2.66666 8.66536 2.66666L26.6654 2.66666C27.3726 2.66666 28.0509 2.94761 28.551 3.44771C29.0511 3.94781 29.332 4.62608 29.332 5.33333L29.332 16C29.332 16.7072 29.0511 17.3855 28.551 17.8856C28.0509 18.3857 27.3726 18.6667 26.6654 18.6667H22.9854C22.4893 18.6669 22.003 18.8056 21.5814 19.067C21.1598 19.3285 20.8195 19.7024 20.5987 20.1467L15.9987 29.3333C15.3699 29.3255 14.751 29.1758 14.1883 28.8952C13.6255 28.6146 13.1335 28.2105 12.7488 27.7131C12.3642 27.2156 12.0969 26.6376 11.967 26.0224C11.8372 25.4071 11.848 24.7705 11.9987 24.16Z"
-                  stroke="#4A5565"
-                  stroke-width="2.66667"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M22.668 18.6667L22.668 2.66667"
-                  stroke="#4A5565"
-                  stroke-width="2.66667"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+            <div
+              className="recommendation-card"
+             onClick={() => handleRecommendation("No")}
+            >
               <p>Not Likely</p>
             </div>
           </div>
@@ -242,24 +330,38 @@ const Feedback = () => {
               Share your experience with us <span>*</span>
             </label>
 
-            <textarea placeholder="Tell us about your experience working with Omkar Consultancy..."></textarea>
+            <textarea
+              name="experience"
+              value={formData.experience}
+              onChange={handleChange}
+              placeholder="Tell us about your experience working with Omkar Consultancy..."
+            ></textarea>
           </div>
 
           <div className="feedback5-group">
             <label>How can we improve? (Optional)</label>
 
-            <textarea placeholder="Share any suggestions for improvement..."></textarea>
+            <textarea
+              name="improvement"
+              value={formData.improvement}
+              onChange={handleChange}
+              placeholder="Share any suggestions for improvement..."
+            ></textarea>
           </div>
         </div>
       </section>
 
       <section className="submit-section">
         <div className="submit-container">
-          <button className="submit-btn">Submit Feedback</button>
+          <button className="submit-btn" onClick={handleSubmit}>
+            Submit Feedback
+          </button>
         </div>
       </section>
+
       <Footer />
     </div>
   );
 };
+
 export default Feedback;

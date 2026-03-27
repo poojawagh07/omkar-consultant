@@ -1,5 +1,3 @@
-
-
 import "./Footer.css";
 import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
@@ -21,9 +19,9 @@ const Footer = () => {
   const createSlug = (text) => {
     return text
       ?.toLowerCase()
-      .replace(/[^a-z0-9\s]/g, "") // remove special chars
+      .replace(/:/g, "") // remove only colon
       .trim()
-      .replace(/\s+/g, "-");
+      .replace(/\s+/g, "-"); // spaces → dash
   };
 
   useEffect(() => {
@@ -37,16 +35,15 @@ const Footer = () => {
     const fetchISO = async () => {
       try {
         const res = await fetch(
-          "https://sirsonite.in/sirsonite-d/omkaradmin/api/iso-standards",
+          "https://www.sirsonite.in/sirsonite-d/omkaradmin/api/courses",
         );
+
         const data = await res.json();
 
-        console.log("ISO API Response:", data); // 🔍 Debug
+        console.log("Courses API:", data);
 
-        if (data.success && Array.isArray(data.data)) {
-          const unique = [...new Set(data.data)];
-
-          setIsoList(unique);
+        if (data.status) {
+          setIsoList(data.data); // 👈 full objects with slug
         } else {
           setIsoList([]);
         }
@@ -129,9 +126,9 @@ const Footer = () => {
               {loadingISO ? (
                 <li>Loading...</li>
               ) : isoList.length > 0 ? (
-                isoList.slice(0, 7).map((iso, index) => (
+                isoList.slice(0, 4).map((item, index) => (
                   <li key={index}>
-                    <Link to={`/iso/${createSlug(iso)}`}>{iso}</Link>
+                    <Link to={`/iso/${item.slug}`}>{item.title}</Link>
                   </li>
                 ))
               ) : (

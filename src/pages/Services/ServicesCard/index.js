@@ -152,8 +152,8 @@ const ServiceCard = () => {
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="30"
-          height="27"
+          width="43"
+          height="43"
           viewBox="0 0 30 27"
           fill="none"
         >
@@ -170,14 +170,58 @@ const ServiceCard = () => {
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="30"
-          height="27"
-          viewBox="0 0 30 27"
+          width="44"
+          height="44"
+          viewBox="0 0 24 24"
           fill="none"
         >
-          <path
-            d="M29.903 7.11353V26.6757H9.20091V23.119H4.60046V19.5622H0V0H13.1365L17.7369 3.55677H25.3025V7.11353H29.903ZM13.8014 5.33515H16.7665L13.8014 3.0427V5.33515ZM18.4018 17.7838V7.11353H11.5011V1.77838H2.30023V17.7838H18.4018ZM23.0023 21.3406V5.33515H20.7021V19.5622H6.90069V21.3406H23.0023ZM27.6207 8.89191H25.3025V23.119H11.5011V24.8974H27.6207V8.89191Z"
-            fill="#0B82AD"
+          <rect
+            x="5"
+            y="3"
+            width="14"
+            height="18"
+            rx="2"
+            stroke="#0B82AD"
+            stroke-width="2"
+          />
+          <line
+            x1="8"
+            y1="7"
+            x2="16"
+            y2="7"
+            stroke="#0B82AD"
+            stroke-width="2"
+          />
+          <line
+            x1="8"
+            y1="11"
+            x2="16"
+            y2="11"
+            stroke="#0B82AD"
+            stroke-width="2"
+          />
+          <line
+            x1="8"
+            y1="14"
+            x2="13"
+            y2="14"
+            stroke="#0B82AD"
+            stroke-width="2"
+          />
+          <line
+            x1="8"
+            y1="18"
+            x2="12"
+            y2="18"
+            stroke="#0B82AD"
+            stroke-width="2"
+          />
+          <circle
+            cx="16.5"
+            cy="17.5"
+            r="1.5"
+            stroke="#0B82AD"
+            stroke-width="2"
           />
         </svg>
       ),
@@ -226,7 +270,6 @@ const ServiceCard = () => {
               );
             })}
           </div>
-
           <div className="services-grid2">
             {secondRow.map((item, i) => {
               const config = Service[(i + firstRow.length) % Service.length];
@@ -253,7 +296,6 @@ const ServiceCard = () => {
           </div>
         </div>
       </section>
-
       <Footer />
     </div>
   );

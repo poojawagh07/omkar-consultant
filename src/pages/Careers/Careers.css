@@ -341,3 +341,7 @@ img {
   }
 
 }
+
+.form-group span{
+  color: red;
+}
